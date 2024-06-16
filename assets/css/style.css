@@ -1,4 +1,16 @@
+/* General styles */
 body {
     background-color: #42A5F5;
     font-family: "Lato", sans-serif;
+    color: #445361;
+    text-align: center;
 }
+
+/* Heading styles */
+.logo {
+    width: 50%;
+    height: auto;
+    display: block;
+    margin: 20px auto 0 auto;
+}
+    
