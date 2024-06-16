@@ -15,7 +15,36 @@
 </head>
 <body>
 
-    <img src="assets/images/onepiecelogo.png" alt="One Piece logo">
+    <!-- Page logo -->
+    <h1 class="heading">
+        <img src="assets/images/onepiecelogo.png" alt="One Piece logo">
+    </h1>
+
+    <!-- Home section -->
+    <div class="main-area">
+        <input type="button" value="Play" id="play-button">
+        <p>Test your knowledge of the pirate world in the ultimate One Piece Quiz!</p>
+    </div>
+
+    <!-- Quiz selection section -->
+    <div id="quiz-selection">
+        <input type="button" value="Characters" class="quiz-buttons">
+        <input type="button" value="Places" class="quiz-buttons">
+        <input type="button" value="Quotes" class="quiz-buttons">
+        <input type="button" value="Bounties" class="quiz-buttons">
+        <input type="button" value="Back" id="back-button">
+    </div>
+
+    <!-- Characters quiz section -->
+     <div id="characters-quiz">
+        <h2>Who is this?</h2>
+        <!-- Here goes image -->
+         <label for="quizInput">Enter your answer here:</label>
+         <input type="text" id="quizInput" pattern="[A-Za-z]+" title="Write answer here...">
+         <input type="submit" value="Answer">
+     </div>
+
+    
     
     <script src="assets/js/script.js"></script>
 </body>
