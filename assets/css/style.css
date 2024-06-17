@@ -78,3 +78,50 @@ body {
 #back-button:hover {
     background-color: #BBDEFB;
 }
+
+/* Characters Quiz Section styling */
+#characters-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+#character-section h2 {
+    font-size: 26px;
+    margin-bottom: 20px;
+}
+
+.image-container {
+    position: relative;
+    width: 200px;
+    height: 300px;
+}
+
+.image-container img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+#quizInput {
+    margin-top: 20px;
+    padding: 10px;
+    font-size: 16px;
+}
+
+.answer {
+    font-size: 18px;
+    padding: 12px 24px;
+    margin: 20px 0;
+    background-color: #1E88E5;
+    color: white;
+    border: none;
+}
+
+.answer:hover {
+    background-color: #0D47A1;
+}

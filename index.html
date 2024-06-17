@@ -41,11 +41,13 @@
     <!-- Characters quiz section -->
      <div id="characters-section" class="hidden">
         <h2>Who is this?</h2>
-        <img id="character" src="assets/images/characters/Silhouette/ace.png" alt="A character from One Piece">
-        <img class="hidden" id="character-answer" src="assets/images/characters/Colored/ace.png" alt="A character from One Piece">
+        <div class="image-container">
+            <img id="character" src="assets/images/characters/Silhouette/ace.png" alt="A character from One Piece">
+            <img class="hidden" id="character-answer" src="assets/images/characters/Colored/ace.png" alt="A character from One Piece">
+        </div>
         <label for="quizInput">Enter your answer here:</label>
         <input type="text" id="quizInput" pattern="[A-Za-z]+" title="Write answer here...">
-        <input type="submit" value="Answer">
+        <input type="submit" value="Answer" class="answer">
      </div>
 
     
