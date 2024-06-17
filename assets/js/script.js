@@ -4,24 +4,41 @@ document.addEventListener("DOMContentLoaded", function() {
     const charactersButton = document.querySelector(".quiz-buttons[value='Characters']");
     const characterSection = document.getElementById("characters-section");
     const characterImage = document.getElementById("character");
+    const characterAnswerImage = document.getElementById("character-answer");
     const submitAnswer = document.querySelector(".answer");
     const scoreElement = document.querySelector(".score");
     const incorrectElement = document.querySelector(".incorrect");
 
-    // Characters array
+    // Characters silhouette array
     const characters = [
-        { src: "assets/images/characters/Silhouette/ace.png", name: "ace"},
-        { src: "assets/images/characters/Silhouette/brook.png", name: "brook"},
-        { src: "assets/images/characters/Silhouette/chopper.png", name: "chopper"},
-        { src: "assets/images/characters/Silhouette/franky.png", name: "franky"},
-        { src: "assets/images/characters/Silhouette/jimbei.png", name: "jimbei"},
-        { src: "assets/images/characters/Silhouette/monkeydluffy.png", name: "luffy"},
-        { src: "assets/images/characters/Silhouette/nami.png", name: "nami"},
-        { src: "assets/images/characters/Silhouette/nicorobin.png", name: "nicorobin"},
-        { src: "assets/images/characters/Silhouette/roronoazoro.png", name: "zoro"},
-        { src: "assets/images/characters/Silhouette/sanji.png", name: "sanji"},
-        { src: "assets/images/characters/Silhouette/shanks.png", name: "shanks"},
-        { src: "assets/images/characters/Silhouette/usopp.png", name: "usopp"}
+        { src: "assets/images/characters/silhouette/ace.png", name: "ace"},
+        { src: "assets/images/characters/silhouette/brook.png", name: "brook"},
+        { src: "assets/images/characters/silhouette/chopper.png", name: "chopper"},
+        { src: "assets/images/characters/silhouette/franky.png", name: "franky"},
+        { src: "assets/images/characters/silhouette/jimbei.png", name: "jimbei"},
+        { src: "assets/images/characters/silhouette/monkeydluffy.png", name: "luffy"},
+        { src: "assets/images/characters/silhouette/nami.png", name: "nami"},
+        { src: "assets/images/characters/silhouette/nicorobin.png", name: "nicorobin"},
+        { src: "assets/images/characters/silhouette/roronoazoro.png", name: "zoro"},
+        { src: "assets/images/characters/silhouette/sanji.png", name: "sanji"},
+        { src: "assets/images/characters/silhouette/shanks.png", name: "shanks"},
+        { src: "assets/images/characters/silhouette/usopp.png", name: "usopp"}
+    ];
+
+    // Characters answer array, colored versions
+    const characterAnswers = [
+        { src: "assets/images/characters/colored/ace.png", name: "ace"},
+        { src: "assets/images/characters/colored/brook.png", name: "brook"},
+        { src: "assets/images/characters/colored/chopper.png", name: "chopper"},
+        { src: "assets/images/characters/colored/franky.png", name: "franky"},
+        { src: "assets/images/characters/colored/jimbei.png", name: "jimbei"},
+        { src: "assets/images/characters/colored/monkeydluffy.png", name: "luffy"},
+        { src: "assets/images/characters/colored/nami.png", name: "nami"},
+        { src: "assets/images/characters/colored/nicorobin.png", name: "robin"},
+        { src: "assets/images/characters/colored/roronoazoro.png", name: "zoro"},
+        { src: "assets/images/characters/colored/sanji.png", name: "sanji"},
+        { src: "assets/images/characters/colored/shanks.png", name: "shanks"},
+        { src: "assets/images/characters/colored/usopp.png", name: "usopp"},
     ];
 
     let currentCharacter;
@@ -52,9 +69,43 @@ document.addEventListener("DOMContentLoaded", function() {
         const userAnswer = document.getElementById("quizInput").value.toLowerCase();
 
         if (userAnswer === currentCharacter.name) {
+            // Increment score
             scoreElement.textContent = parseInt(scoreElement.textContent) + 1;
+
+            // Show colored character image
+            characterImage.classList.add("hidden");
+            characterAnswerImage.src = characterAnswers.find(c => c.name === currentCharacter.name).src;
+            characterAnswerImage.classList.remove("hidden");
+
+            // Delay for 2 seconds and then continue quiz
+            setTimeout(function() {
+                characterImage.classList.remove("hidden");
+                characterAnswerImage.classList.add("hidden");
+
+                //Select a new random character
+                const newIndex = Math.floor(Math.random() * characters.length);
+                currentCharacter = characters[newIndex];
+                characterImage.src = currentCharacter.src;
+            }, 2000);
         } else {
+            // Increment incorrect score
             incorrectElement.textContent = parseInt(incorrectElement.textContent) + 1;
+
+            // Show colored character image
+            characterImage.classList.add("hidden");
+            characterAnswerImage.src = characterAnswers.find(c => c.name === currentCharacter.name).src;
+            characterAnswerImage.classList.remove("hidden");
+
+            // Delay for 2 seconds and then continue quiz
+            setTimeout(function() {
+                characterImage.classList.remove("hidden");
+                characterAnswerImage.classList.add("hidden");
+
+                //Select a new random character
+                const newIndex = Math.floor(Math.random() * characters.length);
+                currentCharacter = characters[newIndex];
+                characterImage.src = currentCharacter.src;
+            }, 2000);
         }
 
         // Clear the input field
