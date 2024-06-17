@@ -116,7 +116,7 @@ body {
 .answer {
     font-size: 18px;
     padding: 12px 24px;
-    margin: 20px 0;
+    margin: 10px 0;
     background-color: #1E88E5;
     color: white;
     border: none;
@@ -124,4 +124,27 @@ body {
 
 .answer:hover {
     background-color: #0D47A1;
+}
+
+.score-area {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5px auto;
+    font-size: 1rem;
+    gap: 20px;
+}
+
+.scores {
+    margin: 0;
+}
+
+.score {
+    color: green;
+    font-weight: bold;
+}
+
+.incorrect {
+    color: red;
+    font-weight: bold;
 }
