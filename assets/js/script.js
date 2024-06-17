@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", function() {
         { src: "assets/images/characters/colored/jimbei.png", name: "jimbei"},
         { src: "assets/images/characters/colored/monkeydluffy.png", name: "luffy"},
         { src: "assets/images/characters/colored/nami.png", name: "nami"},
-        { src: "assets/images/characters/colored/nicorobin.png", name: "robin"},
+        { src: "assets/images/characters/colored/nicorobin.png", name: "nicorobin"},
         { src: "assets/images/characters/colored/roronoazoro.png", name: "zoro"},
         { src: "assets/images/characters/colored/sanji.png", name: "sanji"},
         { src: "assets/images/characters/colored/shanks.png", name: "shanks"},
