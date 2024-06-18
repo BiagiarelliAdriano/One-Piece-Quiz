@@ -8,6 +8,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const submitAnswer = document.querySelector(".answer");
     const scoreElement = document.querySelector(".score");
     const incorrectElement = document.querySelector(".incorrect");
+    const saveBackButton = document.getElementById("save-back-button");
 
     // Characters silhouette array
     const characters = [
@@ -42,9 +43,22 @@ document.addEventListener("DOMContentLoaded", function() {
     ];
 
     let currentCharacter;
+    let correctAnswers = 0;
+    let incorrectAnswers = 0;
+
+    function showRandomCharacter() {
+        // Select a random character
+        const randomIndex = Math.floor(Math.random() * characters.length);
+        currentCharacter = characters[randomIndex];
+
+        // Set the character image
+        characterImage.src = currentCharacter.src;
+    }
 
     document.getElementById("play-button").addEventListener("click", function() {
+        // Hide the current section
         document.querySelector(".main-area").style.display = "none";
+        // Show the right section
         document.getElementById("quiz-selection").classList.remove("hidden");
     }) ;
 
@@ -57,13 +71,13 @@ document.addEventListener("DOMContentLoaded", function() {
         document.getElementById("quiz-selection").classList.add("hidden");
         characterSection.classList.remove("hidden");
 
-        // Select a random character
-        const randomIndex = Math.floor(Math.random() * characters.length);
-        currentCharacter = characters[randomIndex];
-
-        // Set the character image
-        characterImage.src = currentCharacter.src;
+        showRandomCharacter();
     });
+
+    saveBackButton.addEventListener("click", function() {
+        characterSection.classList.add("hidden");
+        document.querySelector(".main-area").style.display = "flex";
+    })
 
     submitAnswer.addEventListener("click", function() {
         const userAnswer = document.getElementById("quizInput").value.toLowerCase();
@@ -71,6 +85,7 @@ document.addEventListener("DOMContentLoaded", function() {
         if (currentCharacter.names.includes(userAnswer)) {
             // Increment score
             scoreElement.textContent = parseInt(scoreElement.textContent) + 1;
+            correctAnswers++;
 
             // Show colored character image
             characterImage.classList.add("hidden");
@@ -82,14 +97,12 @@ document.addEventListener("DOMContentLoaded", function() {
                 characterImage.classList.remove("hidden");
                 characterAnswerImage.classList.add("hidden");
 
-                //Select a new random character
-                const newIndex = Math.floor(Math.random() * characters.length);
-                currentCharacter = characters[newIndex];
-                characterImage.src = currentCharacter.src;
+                showRandomCharacter();
             }, 2000);
         } else {
             // Increment incorrect score
             incorrectElement.textContent = parseInt(incorrectElement.textContent) + 1;
+            incorrectAnswers++;
 
             // Show colored character image
             characterImage.classList.add("hidden");
@@ -101,10 +114,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 characterImage.classList.remove("hidden");
                 characterAnswerImage.classList.add("hidden");
 
-                //Select a new random character
-                const newIndex = Math.floor(Math.random() * characters.length);
-                currentCharacter = characters[newIndex];
-                characterImage.src = currentCharacter.src;
+                showRandomCharacter();
             }, 2000);
         }
 
