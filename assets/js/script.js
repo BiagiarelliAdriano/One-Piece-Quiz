@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", function() {
         { src: "assets/images/characters/silhouette/nicorobin.png", names: ["robin", "nico robin", "nico"]},
         { src: "assets/images/characters/silhouette/roronoazoro.png", names: ["zoro", "roronoa zoro", "roronoa"]},
         { src: "assets/images/characters/silhouette/sanji.png", names: ["sanji", "vismoke sanji"]},
-        { src: "assets/images/characters/silhouette/shanks.png", names: ["shanks", "red-haired", "red-haired shanks"]},
+        { src: "assets/images/characters/silhouette/shanks.png", names: ["shanks", "red-haired", "red-haired shanks", "red haired"]},
         { src: "assets/images/characters/silhouette/usopp.png", names: ["usopp"]}
     ];
 
@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", function() {
         { src: "assets/images/characters/colored/nicorobin.png", names: ["robin", "nico robin", "nico"]},
         { src: "assets/images/characters/colored/roronoazoro.png", names: ["zoro", "roronoa zoro", "roronoa"]},
         { src: "assets/images/characters/colored/sanji.png", names: ["sanji", "vismoke sanji"]},
-        { src: "assets/images/characters/colored/shanks.png", names: ["shanks", "red-haired", "red-haired shanks"]},
+        { src: "assets/images/characters/colored/shanks.png", names: ["shanks", "red-haired", "red-haired shanks", "red haired"]},
         { src: "assets/images/characters/colored/usopp.png", names: ["usopp"]},
     ];
 
@@ -93,7 +93,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
             // Show colored character image
             characterImage.classList.add("hidden");
-            characterAnswerImage.src = characterAnswers.find(c => c.name === currentCharacter.name).src;
+            characterAnswerImage.src = characterAnswers.find(c => c.names[0] === currentCharacter.names[0]).src;
             characterAnswerImage.classList.remove("hidden");
 
             // Delay for 2 seconds and then continue quiz
