@@ -77,6 +77,10 @@ document.addEventListener("DOMContentLoaded", function() {
     saveBackButton.addEventListener("click", function() {
         characterSection.classList.add("hidden");
         document.querySelector(".main-area").style.display = "flex";
+
+        // Reset the displayed scores
+        scoreElement.textContent = 0;
+        incorrectElement.textContent = 0;
     })
 
     submitAnswer.addEventListener("click", function() {
