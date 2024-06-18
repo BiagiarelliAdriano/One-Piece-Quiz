@@ -11,34 +11,34 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Characters silhouette array
     const characters = [
-        { src: "assets/images/characters/silhouette/ace.png", name: "ace"},
-        { src: "assets/images/characters/silhouette/brook.png", name: "brook"},
-        { src: "assets/images/characters/silhouette/chopper.png", name: "chopper"},
-        { src: "assets/images/characters/silhouette/franky.png", name: "franky"},
-        { src: "assets/images/characters/silhouette/jimbei.png", name: "jimbei"},
-        { src: "assets/images/characters/silhouette/monkeydluffy.png", name: "luffy"},
-        { src: "assets/images/characters/silhouette/nami.png", name: "nami"},
-        { src: "assets/images/characters/silhouette/nicorobin.png", name: "robin"},
-        { src: "assets/images/characters/silhouette/roronoazoro.png", name: "zoro"},
-        { src: "assets/images/characters/silhouette/sanji.png", name: "sanji"},
-        { src: "assets/images/characters/silhouette/shanks.png", name: "shanks"},
-        { src: "assets/images/characters/silhouette/usopp.png", name: "usopp"}
+        { src: "assets/images/characters/silhouette/ace.png", names: ["ace", "portgas d ace", "portgas"]},
+        { src: "assets/images/characters/silhouette/brook.png", names: ["brook"]},
+        { src: "assets/images/characters/silhouette/chopper.png", names: ["chopper", "tony tony chopper"]},
+        { src: "assets/images/characters/silhouette/franky.png", names: ["franky", "cutty flam"]},
+        { src: "assets/images/characters/silhouette/jimbei.png", names: ["jimbei", "jinbei", "jinbe"]},
+        { src: "assets/images/characters/silhouette/monkeydluffy.png", names: ["luffy", "monkey d luffy"]},
+        { src: "assets/images/characters/silhouette/nami.png", names: ["nami"]},
+        { src: "assets/images/characters/silhouette/nicorobin.png", names: ["robin", "nico robin", "nico"]},
+        { src: "assets/images/characters/silhouette/roronoazoro.png", names: ["zoro", "roronoa zoro", "roronoa"]},
+        { src: "assets/images/characters/silhouette/sanji.png", names: ["sanji", "vismoke sanji"]},
+        { src: "assets/images/characters/silhouette/shanks.png", names: ["shanks", "red-haired", "red-haired shanks"]},
+        { src: "assets/images/characters/silhouette/usopp.png", names: ["usopp"]}
     ];
 
     // Characters answer array, colored versions
     const characterAnswers = [
-        { src: "assets/images/characters/colored/ace.png", name: "ace"},
-        { src: "assets/images/characters/colored/brook.png", name: "brook"},
-        { src: "assets/images/characters/colored/chopper.png", name: "chopper"},
-        { src: "assets/images/characters/colored/franky.png", name: "franky"},
-        { src: "assets/images/characters/colored/jimbei.png", name: "jimbei"},
-        { src: "assets/images/characters/colored/monkeydluffy.png", name: "luffy"},
-        { src: "assets/images/characters/colored/nami.png", name: "nami"},
-        { src: "assets/images/characters/colored/nicorobin.png", name: "robin"},
-        { src: "assets/images/characters/colored/roronoazoro.png", name: "zoro"},
-        { src: "assets/images/characters/colored/sanji.png", name: "sanji"},
-        { src: "assets/images/characters/colored/shanks.png", name: "shanks"},
-        { src: "assets/images/characters/colored/usopp.png", name: "usopp"},
+        { src: "assets/images/characters/colored/ace.png", names: ["ace", "portgas d ace", "portgas"]},
+        { src: "assets/images/characters/colored/brook.png", names: ["brook"]},
+        { src: "assets/images/characters/colored/chopper.png", names: ["chopper", "tony tony chopper"]},
+        { src: "assets/images/characters/colored/franky.png", names: ["franky", "cutty flam"]},
+        { src: "assets/images/characters/colored/jimbei.png", names: ["jimbei", "jinbei", "jinbe"]},
+        { src: "assets/images/characters/colored/monkeydluffy.png", names: ["luffy", "monkey d luffy"]},
+        { src: "assets/images/characters/colored/nami.png", names: ["nami"]},
+        { src: "assets/images/characters/colored/nicorobin.png", names: ["robin", "nico robin", "nico"]},
+        { src: "assets/images/characters/colored/roronoazoro.png", names: ["zoro", "roronoa zoro", "roronoa"]},
+        { src: "assets/images/characters/colored/sanji.png", names: ["sanji", "vismoke sanji"]},
+        { src: "assets/images/characters/colored/shanks.png", names: ["shanks", "red-haired", "red-haired shanks"]},
+        { src: "assets/images/characters/colored/usopp.png", names: ["usopp"]},
     ];
 
     let currentCharacter;
@@ -68,13 +68,13 @@ document.addEventListener("DOMContentLoaded", function() {
     submitAnswer.addEventListener("click", function() {
         const userAnswer = document.getElementById("quizInput").value.toLowerCase();
 
-        if (userAnswer === currentCharacter.name) {
+        if (currentCharacter.names.includes(userAnswer)) {
             // Increment score
             scoreElement.textContent = parseInt(scoreElement.textContent) + 1;
 
             // Show colored character image
             characterImage.classList.add("hidden");
-            characterAnswerImage.src = characterAnswers.find(c => c.name === currentCharacter.name).src;
+            characterAnswerImage.src = characterAnswers.find(c => c.names[0] === currentCharacter.names[0]).src;
             characterAnswerImage.classList.remove("hidden");
 
             // Delay for 2 seconds and then continue quiz
