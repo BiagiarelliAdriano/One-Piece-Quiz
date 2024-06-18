@@ -57,6 +57,33 @@ body {
     background-color: #BBDEFB;
 }
 
+/* Scores table styles */
+#scores-table {
+    margin-top: 20px;
+}
+
+#scores-table table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#scores-table td {
+    padding: 8px;
+    border: 1px solid white;
+}
+
+#scores-table td:first-child {
+    font-weight: bold;
+}
+
+#scores-table tr:first-child td {
+    color: #00E676;
+}
+
+#scores-table tr:last-child td {
+    color: #D32F2F;
+}
+
 /* Quiz selection area */
 #quiz-selection {
     display: flex;
@@ -156,12 +183,12 @@ body {
 }
 
 .score {
-    color: green;
+    color: #00E676;
     font-weight: bold;
 }
 
 .incorrect {
-    color: red;
+    color: #D32F2F;
     font-weight: bold;
 }
 

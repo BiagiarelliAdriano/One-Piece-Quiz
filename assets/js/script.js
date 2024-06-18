@@ -9,6 +9,8 @@ document.addEventListener("DOMContentLoaded", function() {
     const scoreElement = document.querySelector(".score");
     const incorrectElement = document.querySelector(".incorrect");
     const saveBackButton = document.getElementById("save-back-button");
+    const scoresButton = document.getElementById("scores-button");
+    const scoresTable = document.getElementById("scores-table");
 
     // Characters silhouette array
     const characters = [
@@ -62,6 +64,10 @@ document.addEventListener("DOMContentLoaded", function() {
         document.getElementById("quiz-selection").classList.remove("hidden");
     }) ;
 
+    scoresButton.addEventListener("click", function() {
+        scoresTable.classList.toggle("hidden");
+    })
+
     document.getElementById("back-button").addEventListener("click", function() {
         document.getElementById("quiz-selection").classList.add("hidden");
         document.querySelector(".main-area").style.display = "flex";
@@ -77,6 +83,10 @@ document.addEventListener("DOMContentLoaded", function() {
     saveBackButton.addEventListener("click", function() {
         characterSection.classList.add("hidden");
         document.querySelector(".main-area").style.display = "flex";
+
+        // Update scores in the table
+        document.querySelector("#scores-table tr:nth-child(1) td:last-child").textContent = scoreElement.textContent;
+        document.querySelector("#scores-table tr:nth-child(2) td:last-child").textContent = incorrectElement.textContent;
 
         // Reset the displayed scores
         scoreElement.textContent = 0;
