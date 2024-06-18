@@ -1,4 +1,4 @@
-// Make sure the script runs after all the elements in the HTML code is loaded
+// Make sure the script runs after all the elements in the HTML code are loaded
 document.addEventListener("DOMContentLoaded", function() {
     // Constants
     const charactersButton = document.querySelector(".quiz-buttons[value='Characters']");
