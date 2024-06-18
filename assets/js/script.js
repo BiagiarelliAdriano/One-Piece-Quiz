@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const characters = [
         { src: "assets/images/characters/silhouette/ace.png", names: ["ace", "portgas d ace", "portgas"]},
         { src: "assets/images/characters/silhouette/brook.png", names: ["brook"]},
-        { src: "assets/images/characters/silhouette/chopper.png", names: ["chopper", "tony tony chopper"]},
+        { src: "assets/images/characters/silhouette/chopper.png", names: ["chopper", "tony tony chopper", "tony chopper"]},
         { src: "assets/images/characters/silhouette/franky.png", names: ["franky", "cutty flam"]},
         { src: "assets/images/characters/silhouette/jimbei.png", names: ["jimbei", "jinbei", "jinbe"]},
         { src: "assets/images/characters/silhouette/monkeydluffy.png", names: ["luffy", "monkey d luffy"]},
@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const characterAnswers = [
         { src: "assets/images/characters/colored/ace.png", names: ["ace", "portgas d ace", "portgas"]},
         { src: "assets/images/characters/colored/brook.png", names: ["brook"]},
-        { src: "assets/images/characters/colored/chopper.png", names: ["chopper", "tony tony chopper"]},
+        { src: "assets/images/characters/colored/chopper.png", names: ["chopper", "tony tony chopper", "tony chopper"]},
         { src: "assets/images/characters/colored/franky.png", names: ["franky", "cutty flam"]},
         { src: "assets/images/characters/colored/jimbei.png", names: ["jimbei", "jinbei", "jinbe"]},
         { src: "assets/images/characters/colored/monkeydluffy.png", names: ["luffy", "monkey d luffy"]},
