@@ -129,6 +129,17 @@ document.addEventListener("DOMContentLoaded", function() {
         quizAnswer.textContent = "";
         updateScoresTitle("Quotes");
     }
+
+    // Devil Fruits Section Quiz
+    function showRandomDevilFruit() {
+        const randomIndex = Math.floor(Math.random() * devilFruits.length);
+        currentDevilFruit = devilFruits[randomIndex];
+        quizQuestion.textContent = "What is this Devil Fruit?";
+        quizImage.src = currentDevilFruit.src;
+        quizImage.classList.remove("hidden");
+        quizAnswer.textContent = "";
+        updateScoresTitle("Devil Fruits");
+    }
     
     function updateScoresTable() {
         document.querySelector("#scores-table tr:nth-child(1) td:last-child").textContent = correctAnswers;
