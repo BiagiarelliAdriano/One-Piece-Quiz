@@ -92,6 +92,7 @@ document.addEventListener("DOMContentLoaded", function() {
         characterSection.classList.remove("hidden");
 
         showRandomCharacter();
+        focusAnswerBox();
     });
 
     saveBackButton.addEventListener("click", function() {
@@ -131,6 +132,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 characterAnswerImage.classList.add("hidden");
 
                 showRandomCharacter();
+                focusAnswerBox();
             }, 2000);
         } else {
             // Increment incorrect score
@@ -147,6 +149,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 characterAnswerImage.classList.add("hidden");
 
                 showRandomCharacter();
+                focusAnswerBox();
             }, 2000);
         }
 
