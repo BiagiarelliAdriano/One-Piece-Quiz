@@ -63,6 +63,10 @@ document.addEventListener("DOMContentLoaded", function() {
         document.querySelector("#scores-table tr:nth-child(2) td:last-child").textContent = incorrectAnswers;
     }
 
+    function focusAnswerBox() {
+        document.getElementById("quiz-input".focus());
+    }
+
     // Show Quiz Selection Buttons
     document.getElementById("play-button").addEventListener("click", function() {
         // Hide the current section
@@ -110,7 +114,7 @@ document.addEventListener("DOMContentLoaded", function() {
     })
 
     submitAnswer.addEventListener("click", function() {
-        const userAnswer = document.getElementById("quizInput").value.toLowerCase();
+        const userAnswer = document.getElementById("quiz-input").value.toLowerCase();
 
         if (currentCharacter.names.includes(userAnswer)) {
             // Increment score
@@ -147,6 +151,6 @@ document.addEventListener("DOMContentLoaded", function() {
         }
 
         // Clear the input field
-        document.getElementById("quizInput").value = "";
+        document.getElementById("quiz-input").value = "";
     });
 });
