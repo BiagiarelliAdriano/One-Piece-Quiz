@@ -171,6 +171,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 break;
         }
     }
+
     function getNextQuestion(quizType) {
         switch (quizType) {
             case "Characters":
@@ -277,45 +278,38 @@ document.addEventListener("DOMContentLoaded", function() {
     })
 
     submitAnswer.addEventListener("click", function() {
-        const userAnswer = document.getElementById("quiz-input").value.toLowerCase();
+        const userAnswer = document.getElementById("quiz-input").ariaValueMax.toLowerCase();
+        let isCorrect = false;
 
-        if (currentCharacter.names.includes(userAnswer)) {
-            // Increment score
-            scoreElement.textContent = parseInt(scoreElement.textContent) + 1;
-
-            // Show colored character image
-            characterImage.classList.add("hidden");
-            characterAnswerImage.src = characterAnswers.find(c => c.names[0] === currentCharacter.names[0]).src;
-            characterAnswerImage.classList.remove("hidden");
-
-            // Delay for 2 seconds and then continue quiz
-            setTimeout(function() {
-                characterImage.classList.remove("hidden");
-                characterAnswerImage.classList.add("hidden");
-
-                showRandomCharacter();
-                focusAnswerBox();
-            }, 2000);
-        } else {
-            // Increment incorrect score
-            incorrectElement.textContent = parseInt(incorrectElement.textContent) + 1;
-
-            // Show colored character image
-            characterImage.classList.add("hidden");
-            characterAnswerImage.src = characterAnswers.find(c => c.names[0] === currentCharacter.names[0]).src;
-            characterAnswerImage.classList.remove("hidden");
-
-            // Delay for 2 seconds and then continue quiz
-            setTimeout(function() {
-                characterImage.classList.remove("hidden");
-                characterAnswerImage.classList.add("hidden");
-
-                showRandomCharacter();
-                focusAnswerBox();
-            }, 2000);
+        switch (scoreTitle.textContent) {
+            case "Characters correct:":
+                isCorrect = currentCharacter.names.includes(userAnswer);
+                break;
+            case "Places correct:":
+                isCorrect = userAnswer === currentPlace.name;
+                quizAnswer.textContent = "Correct answer: ${currentPlace.name}";
+                break;
+            case "Quotes correct:":
+                isCorrect = userAnswer === currentQuote.character;
+                quizAnswer.textContent = "Correct answer: ${currentQuote.character}";
+            case "Devil Fruits correct:":
+                isCorrect = currentDevilFruit.names.includes(userAnswer);
+                break;
+            default:
+                break;
         }
 
-        // Clear the input field
+        if (isCorrect) {
+            scoreElement.textContent = parseInt(scoreElement.textContent) + 1;
+        } else {
+            incorrectElement.textContent = parseInt(incorrectElement.textContent) + 1;
+        }
+
+        setTimeout(function() {
+            getNextQuestion(scoreTitle.textContent.trim().split(" ")[0]);
+            updateScoresTable();
+        }, 2000);
+
         document.getElementById("quiz-input").value = "";
     });
 });
