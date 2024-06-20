@@ -171,6 +171,24 @@ document.addEventListener("DOMContentLoaded", function() {
                 break;
         }
     }
+    function getNextQuestion(quizType) {
+        switch (quizType) {
+            case "Characters":
+                showRandomCharacter();
+                break;
+            case "Places":
+                showRandomPlace();
+                break;
+            case "Quotes":
+                showRandomQuote();
+                break;
+            case "Devil Fruits":
+                showRandomDevilFruit();
+                break;
+            default:
+                break;
+        }
+    }
 
     // Focuses on the quiz input for the user
     function focusAnswerBox() {
