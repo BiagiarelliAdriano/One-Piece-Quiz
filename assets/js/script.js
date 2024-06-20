@@ -279,7 +279,7 @@ document.addEventListener("DOMContentLoaded", function() {
     })
 
     submitAnswer.addEventListener("click", function() {
-        const userAnswer = document.getElementById("quiz-input").ariaValueMax.toLowerCase();
+        const userAnswer = document.getElementById("quiz-input").value.toLowerCase();
         let isCorrect = false;
 
         switch (scoreTitle.textContent) {
