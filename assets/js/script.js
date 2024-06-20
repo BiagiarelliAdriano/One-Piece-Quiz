@@ -15,6 +15,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     const quizSection = document.getElementById("quiz-section");
     const quizQuestion = document.getElementById("quiz-question");
+    const quizAnswer = document.getElementById("quiz-question");
     const quizImage = document.getElementById("quiz-image");
     const quizQuote = document.getElementById("quiz-quote");
     const quoteContainer = document.getElementById("quote-container");
