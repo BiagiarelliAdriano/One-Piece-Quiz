@@ -76,6 +76,18 @@ document.addEventListener("DOMContentLoaded", function() {
         
     ];
 
+    // Devil Fruits array
+    const devilFruits = [
+        { src: "assets/images/devilfruits/bomubomunomi.png", name: "bomu bomu no mi"},
+        { src: "assets/images/devilfruits/dorudorunomi.png", name: "doru doru no mi"},
+        { src: "assets/images/devilfruits/gomugomunomi.png", name: "gomu gomu no mi"},
+        { src: "assets/images/devilfruits/kagekagenomi.png", name: "kage kage no mi"},
+        { src: "assets/images/devilfruits/merameranomi.png", name: "merameranomi"},
+        { src: "assets/images/devilfruits/opeopenomi.png", name: "ope ope no mi"},
+        { src: "assets/images/devilfruits/sunasunanomi.png", name: "suna suna no mi"},
+        { src: "assets/images/devilfruits/yomiyominomi.png", name: "yomi yomi no mi"},
+    ];
+
     let currentCharacter;
     let correctAnswers = 0;
     let incorrectAnswers = 0;
