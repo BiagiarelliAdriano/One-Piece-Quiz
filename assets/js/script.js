@@ -191,7 +191,7 @@ document.addEventListener("DOMContentLoaded", function() {
     })
 
     // Show Home Page
-    document.getElementById("back-button").addEventListener("click", function() {
+    backButton.addEventListener("click", function() {
         document.getElementById("quiz-selection").classList.add("hidden");
         document.querySelector(".main-area").style.display = "flex";
     }) ;
@@ -202,6 +202,15 @@ document.addEventListener("DOMContentLoaded", function() {
         characterSection.classList.remove("hidden");
 
         showRandomCharacter();
+        focusAnswerBox();
+    });
+
+    // Show Places Quiz
+    placesButton.addEventListener("click", function() {
+        document.getElementById("quiz-selection").classList.add("hidden");
+        characterSection.classList.remove("hidden");
+
+        showRandomPlace();
         focusAnswerBox();
     });
 
