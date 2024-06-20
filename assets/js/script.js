@@ -89,6 +89,9 @@ document.addEventListener("DOMContentLoaded", function() {
     ];
 
     let currentCharacter;
+    let currentPlace;
+    let currentQuote;
+    let currentDevilFruit;
     let correctAnswers = 0;
     let incorrectAnswers = 0;
 
@@ -97,10 +100,15 @@ document.addEventListener("DOMContentLoaded", function() {
         // Select a random character
         const randomIndex = Math.floor(Math.random() * characters.length);
         currentCharacter = characters[randomIndex];
+        quizQuestion.textContent = "Who is this?";
+        quizImage.src = currentCharacter.src;
+        quizImage.classList.remove("hiddedn");
+        quizAnswer.textContent = ""; // Clear answer text area
+        updateScoresTitle("Characters");
 
-        // Set the character image
-        characterImage.src = currentCharacter.src;
     }
+
+    
 
     function updateScoresTable() {
         document.querySelector("#scores-table tr:nth-child(1) td:last-child").textContent = correctAnswers;
