@@ -178,7 +178,11 @@ body {
     gap: 20px;
 }
 
-.scores {
+.score-title {
+    margin: 0;
+}
+
+.score-label {
     margin: 0;
 }
 

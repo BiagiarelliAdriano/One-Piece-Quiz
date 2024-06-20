@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const quizQuote = document.getElementById("quiz-quote");
     const quoteContainer = document.getElementById("quote-container");
     const scoreArea = document.querySelector(".score-area");
-    const scoreTitle = scoreArea.querySelector("score-title");
+    const scoreTitle = scoreArea.querySelector(".score-title");
     const scoreLabel = scoreArea.querySelector(".score-label");
 
     // Characters silhouette array
@@ -108,7 +108,7 @@ document.addEventListener("DOMContentLoaded", function() {
         quizImage.src = currentCharacter.src;
         quizImage.classList.remove("hidden");
         quizAnswer.textContent = ""; // Clear answer text area
-        updateScoresTitle("Characters");
+        updateScoreTitle("Characters");
 
     }
 
@@ -120,7 +120,7 @@ document.addEventListener("DOMContentLoaded", function() {
         quizImage.src = currentPlace.src;
         quizImage.classList.remove("hidden");
         quizAnswer.textContent = "";
-        updateScoresTitle("Places");
+        updateScoreTitle("Places");
     }
 
     // Quotes Section Quiz
@@ -131,7 +131,7 @@ document.addEventListener("DOMContentLoaded", function() {
         quizImage.src = currentQuote.src;
         quizImage.classList.remove("hidden");
         quizAnswer.textContent = "";
-        updateScoresTitle("Quotes");
+        updateScoreTitle("Quotes");
     }
 
     // Devil Fruits Section Quiz
@@ -142,7 +142,7 @@ document.addEventListener("DOMContentLoaded", function() {
         quizImage.src = currentDevilFruit.src;
         quizImage.classList.remove("hidden");
         quizAnswer.textContent = "";
-        updateScoresTitle("Devil Fruits");
+        updateScoreTitle("Devil Fruits");
     }
     
     function updateScoresTable() {
@@ -153,20 +153,20 @@ document.addEventListener("DOMContentLoaded", function() {
     function updateScoreTitle(quizType) {
         switch (quizType) {
             case "Characters":
-                scoreTitle.textContent = "Characters correct:";
-                scoreLabel.textContent = "Characters incorrect:";
+                scoreTitle.innerHTML = "Characters correct: <span class='score'>0</span>";
+                scoreLabel.innerHTML = "Characters incorrect: <span class='incorrect'>0</span>";
                 break;
             case "Places":
-                scoreTitle.textContent = "Places correct:";
-                scoreLabel.textContent = "Places incorrect:";
+                scoreTitle.innerHTML = "Places correct: <span class='score'>0</span>";
+                scoreLabel.innerHTML = "Places incorrect: <span class='incorrect'>0</span>";
                 break;
             case "Quotes":
-                scoreTitle.textContent = "Quotes correct:";
-                scoreLabel.textContent = "Quotes incorrect:";
+                scoreTitle.innerHTML = "Quotes correct: <span class='score'>0</span>";
+                scoreLabel.innerHTML = "Quotes incorrect: <span class='incorrect'>0</span>";
                 break;
             case "Devil Fruits":
-                scoreTitle.textContent = "Devil Fruits correct:";
-                scoreLabel.textContent = "Devil Fruits incorrect:";
+                scoreTitle.innerHTML = "Devil Fruits correct: <span class='score'>0</span>";
+                scoreLabel.innerHTML = "Devil Fruits incorrect: <span class='incorrect'>0</span>";
                 break;
             default:
                 break;
