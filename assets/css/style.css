@@ -119,8 +119,8 @@ body {
     background-color: #BBDEFB;
 }
 
-/* Characters Quiz Section styling */
-#characters-section {
+/* Quiz Section styling */
+#quiz-section {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -128,7 +128,7 @@ body {
     height: 100%;
 }
 
-#character-section h2 {
+#quiz-section h2 {
     font-size: 26px;
     margin-bottom: 20px;
 }

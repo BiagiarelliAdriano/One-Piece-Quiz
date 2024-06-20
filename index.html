@@ -51,14 +51,16 @@
         <input type="button" value="Back" id="back-button">
     </div>
 
-    <!-- Characters quiz section -->
-     <div id="characters-section" class="hidden">
-        <h2>Who is this?</h2>
+    <!-- Quiz section -->
+     <div id="quiz-section" class="hidden">
+        <h2 id="quiz-question">Question will appear here</h2>
         <div class="image-container">
-            <img id="character" src="assets/images/characters/Silhouette/ace.png" alt="A character from One Piece">
-            <img class="hidden" id="character-answer" src="assets/images/characters/Colored/ace.png" alt="A character from One Piece">
+            <img id="quiz-image" class="hidden" src="" alt="Quiz image">
         </div>
-        <label for="quizInput">Enter your answer here:</label>
+        <div id="quote-container" class="hidden">
+            <p id="quiz-quote"></p>
+        </div>
+        <label for="quiz-input">Enter your answer here:</label>
         <input type="text" id="quiz-input" pattern="[A-Za-z]+" title="Write answer here...">
         <input type="submit" value="Answer" class="answer">
 
@@ -71,13 +73,7 @@
         <input type="button" value="Save & Back" id="save-back-button">
      </div>
 
-     <!-- Places quiz section -->
-      <div id="places-section" class="hidden">
-        <h2>Where is this?</h2>
-        <div class="image-container">
-            <img>
-        </div>
-      </div>
+     
 
     
     
