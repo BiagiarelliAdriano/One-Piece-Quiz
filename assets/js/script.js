@@ -61,7 +61,20 @@ document.addEventListener("DOMContentLoaded", function() {
         { src: "assets/images/places/water7.jpg", name: "water 7"},
         { src: "assets/images/places/weatheria.jpg", name: "weatheria"},
         { src: "assets/images/places/zou.jpg", name: "zou"},
-    ]
+    ];
+
+    // Quotes array
+    const quotes = [
+        { quote: "I left everything I gathered together in one place.", character: ["roger", "gold d. roger", "gold roger", "gold d roger"] },
+        { quote: "Nobody hurts a friend of mine!", character: ["shanks", "red-haired", "red-haired shanks", "red haired"] },
+        { quote: "Only I can call my dream stupid!", character: ["zoro", "roronoa", "roronoa zoro"] },
+        { quote: "A man dies when people forget him!", character: ["hiriluk", "dr. hiriluk", "dr hiriluk"] },
+        { quote: "There comes a time when a man must stand and fight. And that is when his friend's dreams are being laughed at!", character: ["usopp"] },
+        { quote: "The dreams of pirates will never end!", character: ["blackbeard", "teach", "marshall d. teach", "marshall d teach"] },
+        { quote: "I want to live!", character: ["robin", "nico", "nico robin"] },
+        { quote: "The flower of friendship can bloom even in hell.", character: ["bon clay", "mr. 2", "mr 2", "bentham"] },
+        
+    ];
 
     let currentCharacter;
     let correctAnswers = 0;
