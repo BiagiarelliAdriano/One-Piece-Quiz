@@ -108,8 +108,18 @@ document.addEventListener("DOMContentLoaded", function() {
 
     }
 
-    
+    // Places Section Quiz
+    function showRandomPlace() {
+        const randomIndex = Math.floor(Math.random() * places.length);
+        currentPlace = places[randomIndex];
+        quizQuestion.textContent = "Where is this place?";
+        quizImage.src = currentPlace.src;
+        quizImage.classList.remove("hidden");
+        quizAnswer.textContent = "";
+        updateScoresTitle("Places");
+    }
 
+    
     function updateScoresTable() {
         document.querySelector("#scores-table tr:nth-child(1) td:last-child").textContent = correctAnswers;
         document.querySelector("#scores-table tr:nth-child(2) td:last-child").textContent = incorrectAnswers;
