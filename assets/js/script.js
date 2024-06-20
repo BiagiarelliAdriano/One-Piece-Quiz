@@ -30,12 +30,12 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Characters answer array, colored versions
     const characterAnswers = [
-        { src: "assets/images/characters/colored/ace.png", names: ["ace", "portgas d ace", "portgas"]},
+        { src: "assets/images/characters/colored/ace.png", names: ["ace", "portgas d ace", "portgas", "portgas d. ace"]},
         { src: "assets/images/characters/colored/brook.png", names: ["brook"]},
         { src: "assets/images/characters/colored/chopper.png", names: ["chopper", "tony tony chopper", "tony chopper"]},
         { src: "assets/images/characters/colored/franky.png", names: ["franky", "cutty flam"]},
         { src: "assets/images/characters/colored/jimbei.png", names: ["jimbei", "jinbei", "jinbe"]},
-        { src: "assets/images/characters/colored/monkeydluffy.png", names: ["luffy", "monkey d luffy"]},
+        { src: "assets/images/characters/colored/monkeydluffy.png", names: ["luffy", "monkey d luffy", "monkey d. luffy"]},
         { src: "assets/images/characters/colored/nami.png", names: ["nami"]},
         { src: "assets/images/characters/colored/nicorobin.png", names: ["robin", "nico robin", "nico"]},
         { src: "assets/images/characters/colored/roronoazoro.png", names: ["zoro", "roronoa zoro", "roronoa"]},
@@ -112,6 +112,12 @@ document.addEventListener("DOMContentLoaded", function() {
 
         characterSection.classList.add("hidden");
         document.querySelector(".main-area").style.display = "flex";
+    })
+
+    document.getElementById("quiz-input").addEventListener("keydown", function(event) {
+        if (event.key === "Enter") {
+            submitAnswer.click();
+        }
     })
 
     submitAnswer.addEventListener("click", function() {
