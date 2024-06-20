@@ -18,6 +18,9 @@ document.addEventListener("DOMContentLoaded", function() {
     const quizImage = document.getElementById("quiz-image");
     const quizQuote = document.getElementById("quiz-quote");
     const quoteContainer = document.getElementById("quote-container");
+    const scoreArea = document.querySelector(".score-area");
+    const scoreTitle = scoreArea.querySelector("score-title");
+    const scoreLabel = scoreArea.querySelector(".score-label");
 
     // Characters silhouette array
     const characters = [
@@ -146,6 +149,30 @@ document.addEventListener("DOMContentLoaded", function() {
         document.querySelector("#scores-table tr:nth-child(2) td:last-child").textContent = incorrectAnswers;
     }
 
+    function updateScoreTitle(quizType) {
+        switch (quizType) {
+            case "Characters":
+                scoreTitle.textContent = "Characters correct:";
+                scoreLabel.textContent = "Characters incorrect:";
+                break;
+            case "Places":
+                scoreTitle.textContent = "Places correct:";
+                scoreLabel.textContent = "Places incorrect:";
+                break;
+            case "Quotes":
+                scoreTitle.textContent = "Quotes correct:";
+                scoreLabel.textContent = "Quotes incorrect:";
+                break;
+            case "Devil Fruits":
+                scoreTitle.textContent = "Devil Fruits correct:";
+                scoreLabel.textContent = "Devil Fruits incorrect:";
+                break;
+            default:
+                break;
+        }
+    }
+
+    // Focuses on the quiz input for the user
     function focusAnswerBox() {
         document.getElementById("quiz-input").focus();
     }
