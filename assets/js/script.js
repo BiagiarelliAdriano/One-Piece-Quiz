@@ -223,6 +223,15 @@ document.addEventListener("DOMContentLoaded", function() {
         focusAnswerBox();
     });
 
+    // Show Devil Fruits Quiz
+    devilFruitsButton.addEventListener("click", function() {
+        document.getElementById("quiz-selection").classList.add("hidden");
+        characterSection.classList.remove("hidden");
+
+        showRandomDevilFruit();
+        focusAnswerBox();
+    });
+
     saveBackButton.addEventListener("click", function() {
         // Get the current scores
         const currentCorrect = parseInt(scoreElement.textContent) || 0;
