@@ -214,6 +214,15 @@ document.addEventListener("DOMContentLoaded", function() {
         focusAnswerBox();
     });
 
+    // Show Quotes Quiz
+    quotesButton.addEventListener("click", function() {
+        document.getElementById("quiz-selection").classList.add("hidden");
+        characterSection.classList.remove("hidden");
+
+        showRandomQuote();
+        focusAnswerBox();
+    });
+
     saveBackButton.addEventListener("click", function() {
         // Get the current scores
         const currentCorrect = parseInt(scoreElement.textContent) || 0;
