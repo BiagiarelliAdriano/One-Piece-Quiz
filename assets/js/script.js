@@ -105,7 +105,7 @@ document.addEventListener("DOMContentLoaded", function() {
         currentCharacter = characters[randomIndex];
         quizQuestion.textContent = "Who is this?";
         quizImage.src = currentCharacter.src;
-        quizImage.classList.remove("hiddedn");
+        quizImage.classList.remove("hidden");
         quizAnswer.textContent = ""; // Clear answer text area
         updateScoresTitle("Characters");
 
@@ -218,7 +218,7 @@ document.addEventListener("DOMContentLoaded", function() {
     // Show Characters Quiz
     charactersButton.addEventListener("click", function() {
         document.getElementById("quiz-selection").classList.add("hidden");
-        characterSection.classList.remove("hidden");
+        quizSection.classList.remove("hidden");
 
         showRandomCharacter();
         focusAnswerBox();
@@ -227,7 +227,7 @@ document.addEventListener("DOMContentLoaded", function() {
     // Show Places Quiz
     placesButton.addEventListener("click", function() {
         document.getElementById("quiz-selection").classList.add("hidden");
-        characterSection.classList.remove("hidden");
+        quizSection.classList.remove("hidden");
 
         showRandomPlace();
         focusAnswerBox();
@@ -236,7 +236,7 @@ document.addEventListener("DOMContentLoaded", function() {
     // Show Quotes Quiz
     quotesButton.addEventListener("click", function() {
         document.getElementById("quiz-selection").classList.add("hidden");
-        characterSection.classList.remove("hidden");
+        quizSection.classList.remove("hidden");
 
         showRandomQuote();
         focusAnswerBox();
@@ -245,7 +245,7 @@ document.addEventListener("DOMContentLoaded", function() {
     // Show Devil Fruits Quiz
     devilFruitsButton.addEventListener("click", function() {
         document.getElementById("quiz-selection").classList.add("hidden");
-        characterSection.classList.remove("hidden");
+        quizSection.classList.remove("hidden");
 
         showRandomDevilFruit();
         focusAnswerBox();
@@ -266,7 +266,7 @@ document.addEventListener("DOMContentLoaded", function() {
         scoreElement.textContent = 0;
         incorrectElement.textContent = 0;
 
-        characterSection.classList.add("hidden");
+        quizSection.classList.add("hidden");
         document.querySelector(".main-area").style.display = "flex";
     })
 
