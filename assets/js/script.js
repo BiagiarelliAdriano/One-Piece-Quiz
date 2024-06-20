@@ -119,6 +119,16 @@ document.addEventListener("DOMContentLoaded", function() {
         updateScoresTitle("Places");
     }
 
+    // Quotes Section Quiz
+    function showRandomQuote() {
+        const randomIndex = Math.floor(Math.random() * quotes.length);
+        currentQuote = quotes[randomIndex];
+        quizQuestion.textContent = "Who said this?";
+        quizImage.src = currentQuote.src;
+        quizImage.classList.remove("hidden");
+        quizAnswer.textContent = "";
+        updateScoresTitle("Quotes");
+    }
     
     function updateScoresTable() {
         document.querySelector("#scores-table tr:nth-child(1) td:last-child").textContent = correctAnswers;
