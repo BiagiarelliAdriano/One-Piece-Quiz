@@ -48,6 +48,7 @@ document.addEventListener("DOMContentLoaded", function() {
     let correctAnswers = 0;
     let incorrectAnswers = 0;
 
+    // Characters Section Quiz
     function showRandomCharacter() {
         // Select a random character
         const randomIndex = Math.floor(Math.random() * characters.length);
@@ -57,6 +58,12 @@ document.addEventListener("DOMContentLoaded", function() {
         characterImage.src = currentCharacter.src;
     }
 
+    function updateScoresTable() {
+        document.querySelector("#scores-table tr:nth-child(1) td:last-child").textContent = correctAnswers;
+        document.querySelector("#scores-table tr:nth-child(2) td:last-child").textContent = incorrectAnswers;
+    }
+
+    // Show Quiz Selection Buttons
     document.getElementById("play-button").addEventListener("click", function() {
         // Hide the current section
         document.querySelector(".main-area").style.display = "none";
@@ -64,15 +71,18 @@ document.addEventListener("DOMContentLoaded", function() {
         document.getElementById("quiz-selection").classList.remove("hidden");
     }) ;
 
+    // Show Score Table
     scoresButton.addEventListener("click", function() {
         scoresTable.classList.toggle("hidden");
     })
 
+    // Show Home Page
     document.getElementById("back-button").addEventListener("click", function() {
         document.getElementById("quiz-selection").classList.add("hidden");
         document.querySelector(".main-area").style.display = "flex";
     }) ;
 
+    // Show Characters Quiz
     charactersButton.addEventListener("click", function() {
         document.getElementById("quiz-selection").classList.add("hidden");
         characterSection.classList.remove("hidden");
@@ -81,16 +91,22 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 
     saveBackButton.addEventListener("click", function() {
-        characterSection.classList.add("hidden");
-        document.querySelector(".main-area").style.display = "flex";
+        // Get the current scores
+        const currentCorrect = parseInt(scoreElement.textContent) || 0;
+        const currentIncorrect = parseInt(incorrectElement.textContent) || 0;
+
+        correctAnswers += currentCorrect;
+        incorrectAnswers += currentIncorrect;
 
         // Update scores in the table
-        document.querySelector("#scores-table tr:nth-child(1) td:last-child").textContent = scoreElement.textContent;
-        document.querySelector("#scores-table tr:nth-child(2) td:last-child").textContent = incorrectElement.textContent;
+        updateScoresTable();
 
         // Reset the displayed scores
         scoreElement.textContent = 0;
         incorrectElement.textContent = 0;
+
+        characterSection.classList.add("hidden");
+        document.querySelector(".main-area").style.display = "flex";
     })
 
     submitAnswer.addEventListener("click", function() {
@@ -99,7 +115,6 @@ document.addEventListener("DOMContentLoaded", function() {
         if (currentCharacter.names.includes(userAnswer)) {
             // Increment score
             scoreElement.textContent = parseInt(scoreElement.textContent) + 1;
-            correctAnswers++;
 
             // Show colored character image
             characterImage.classList.add("hidden");
@@ -116,7 +131,6 @@ document.addEventListener("DOMContentLoaded", function() {
         } else {
             // Increment incorrect score
             incorrectElement.textContent = parseInt(incorrectElement.textContent) + 1;
-            incorrectAnswers++;
 
             // Show colored character image
             characterImage.classList.add("hidden");
