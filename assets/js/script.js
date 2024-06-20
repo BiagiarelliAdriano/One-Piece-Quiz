@@ -64,7 +64,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     function focusAnswerBox() {
-        document.getElementById("quiz-input".focus());
+        document.getElementById("quiz-input").focus();
     }
 
     // Show Quiz Selection Buttons
