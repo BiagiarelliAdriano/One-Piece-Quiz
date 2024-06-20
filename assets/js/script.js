@@ -114,6 +114,7 @@ document.addEventListener("DOMContentLoaded", function() {
         document.querySelector(".main-area").style.display = "flex";
     })
 
+    // Submit using the Enter Key
     document.getElementById("quiz-input").addEventListener("keydown", function(event) {
         if (event.key === "Enter") {
             submitAnswer.click();
