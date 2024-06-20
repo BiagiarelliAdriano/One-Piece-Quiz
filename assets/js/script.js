@@ -1,16 +1,23 @@
 // Make sure the script runs after all the elements in the HTML code are loaded
 document.addEventListener("DOMContentLoaded", function() {
     // Constants
-    const charactersButton = document.querySelector(".quiz-buttons[value='Characters']");
-    const characterSection = document.getElementById("characters-section");
-    const characterImage = document.getElementById("character");
-    const characterAnswerImage = document.getElementById("character-answer");
+    const charactersButton = document.getElementById("characters-quiz");
+    const placesButton = document.getElementById("places-quiz");
+    const quotesButton = document.getElementById("quotes-quiz");
+    const devilFruitsButton = document.getElementById("fruits-quiz");
+    const backButton = document.getElementById("back-button");
+    const saveBackButton = document.getElementById("save-back-button");
     const submitAnswer = document.querySelector(".answer");
     const scoreElement = document.querySelector(".score");
     const incorrectElement = document.querySelector(".incorrect");
-    const saveBackButton = document.getElementById("save-back-button");
     const scoresButton = document.getElementById("scores-button");
     const scoresTable = document.getElementById("scores-table");
+
+    const quizSection = document.getElementById("quiz-section");
+    const quizQuestion = document.getElementById("quiz-question");
+    const quizImage = document.getElementById("quiz-image");
+    const quizQuote = document.getElementById("quiz-quote");
+    const quoteContainer = document.getElementById("quote-container");
 
     // Characters silhouette array
     const characters = [
@@ -43,6 +50,18 @@ document.addEventListener("DOMContentLoaded", function() {
         { src: "assets/images/characters/colored/shanks.png", names: ["shanks", "red-haired", "red-haired shanks", "red haired"]},
         { src: "assets/images/characters/colored/usopp.png", names: ["usopp"]},
     ];
+
+    // Places array
+    const places = [
+        { src: "assets/images/places/amazonlily.jpg", name: "amazon lily"},
+        { src: "assets/images/places/littlegarden.jpg", name: "little garden"},
+        { src: "assets/images/places/ohara.jpg", name: "ohara"},
+        { src: "assets/images/places/shandora.jpg", name: "shandora"},
+        { src: "assets/images/places/wano.jpg", name: "wano"},
+        { src: "assets/images/places/water7.jpg", name: "water 7"},
+        { src: "assets/images/places/weatheria.jpg", name: "weatheria"},
+        { src: "assets/images/places/zou.jpg", name: "zou"},
+    ]
 
     let currentCharacter;
     let correctAnswers = 0;
