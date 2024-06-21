@@ -199,7 +199,6 @@ document.addEventListener("DOMContentLoaded", function() {
                 showRandomDevilFruit();
                 break;
             default:
-                console.log("Unknown quiz type in getNextQuestion:", quizType);
                 break;
         }
     }
@@ -289,6 +288,10 @@ document.addEventListener("DOMContentLoaded", function() {
         document.querySelector(".main-area").style.display = "flex";
     })
 
+    submitAnswerButton.addEventListener("click", function() {
+        submitAnswer();
+    })
+
     // Submit using the Enter Key
     document.getElementById("quiz-input").addEventListener("keydown", function(event) {
         if (event.key === "Enter") {
@@ -300,46 +303,36 @@ document.addEventListener("DOMContentLoaded", function() {
         const userAnswer = document.getElementById("quiz-input").value.toLowerCase().trim();
         let isCorrect = false;
 
-        console.log("Quiz type:", scoreTitle.textContent.split("")[0]);
 
         switch (quizType) {
             case "Characters":
-                console.log("User Answer:", userAnswer);
-                console.log("Expected Answers:", currentCharacter.names);
                 isCorrect = currentCharacter.names.includes(userAnswer);
                 if (!isCorrect) {
                     quizAnswer.textContent = `Correct answer: ${currentCharacter.names[0]}`;
                 }
                 break;
             case "Places":
-                console.log("User Answer:", userAnswer);
-                console.log("Expected Answers:", currentPlace.names);
-                isCorrect = userAnswer === currentPlace.name;
+                isCorrect = currentPlace.names.includes(userAnswer);
                 if (!isCorrect) {
                     quizAnswer.textContent = `Correct answer: ${currentPlace.names[0]}`;
                 }
                 break;
             case "Quotes":
-                console.log("User Answer:", userAnswer);
-                console.log("Expected Answers:", currentQuote.character);
                 isCorrect = currentQuote.character.includes(userAnswer);
                 if (!isCorrect) {
                     quizAnswer.textContent = `Correct answer: ${currentQuote.character[0]}`;
                 }
+                break;
             case "Devil Fruits":
-                console.log("User Answer:", userAnswer);
-                console.log("Expected Answer:", currentDevilFruit.name);
-                isCorrect = currentDevilFruit.name.includes(userAnswer);
+                isCorrect = currentDevilFruit.name === userAnswer;
                 if (!isCorrect) {
                     quizAnswer.textContent = `Correct answer: ${currentDevilFruit.name}`;
                 }
                 break;
             default:
-                console.log("Unknown quiz type");
                 break;
         }
 
-        console.log("Is Correct:", isCorrect);
 
         if (isCorrect) {
             scoreElement.textContent = parseInt(scoreElement.textContent) + 1;
@@ -347,8 +340,6 @@ document.addEventListener("DOMContentLoaded", function() {
             incorrectElement.textContent = parseInt(incorrectElement.textContent) + 1;
         }
 
-        console.log("Correct Answers:", scoreElement.textContent);
-        console.log("Incorrect Answers:", incorrectElement.textContent);
 
         setTimeout(function() {
             getNextQuestion(scoreTitle.textContent.trim().split(" ")[0]);
