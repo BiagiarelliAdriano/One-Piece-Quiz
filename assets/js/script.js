@@ -8,8 +8,8 @@ document.addEventListener("DOMContentLoaded", function() {
     const backButton = document.getElementById("back-button");
     const saveBackButton = document.getElementById("save-back-button");
     const submitAnswerButton = document.querySelector(".answer");
-    const scoreElement = document.querySelector(".score");
-    const incorrectElement = document.querySelector(".incorrect");
+    const scoreElement = document.getElementById("quiz-score");
+    const incorrectElement = document.getElementById("quiz-incorrect");
     const scoresButton = document.getElementById("scores-button");
     const scoresTable = document.getElementById("scores-table");
 
@@ -166,26 +166,32 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     function updateScoreTitle(quizType) {
+        let scoreText, incorrectText;
+
         switch (quizType) {
             case "Characters":
-                scoreTitle.innerHTML = "Characters correct: <span class='score'>0</span>";
-                scoreLabel.innerHTML = "Characters incorrect: <span class='incorrect'>0</span>";
+                scoreText = `Characters correct: <span id='quiz-score'>${correctAnswers}</span>`;
+                incorrectText = `Characters incorrect: <span id='quiz-incorrect'>${incorrectAnswers}</span>`;
                 break;
             case "Places":
-                scoreTitle.innerHTML = "Places correct: <span class='score'>0</span>";
-                scoreLabel.innerHTML = "Places incorrect: <span class='incorrect'>0</span>";
+                scoreText = `Places correct: <span id='quiz-score'>${correctAnswers}</span>`;
+                incorrectText = `Places incorrect: <span id='quiz-incorrect'>${incorrectAnswers}</span>`;
                 break;
             case "Quotes":
-                scoreTitle.innerHTML = "Quotes correct: <span class='score'>0</span>";
-                scoreLabel.innerHTML = "Quotes incorrect: <span class='incorrect'>0</span>";
+                scoreText = `Quotes correct: <span id='quiz-score'>${correctAnswers}</span>`;
+                incorrectText = `Quotes incorrect: <span id='quiz-incorrect'>${incorrectAnswers}</span>`;
                 break;
             case "Devil Fruits":
-                scoreTitle.innerHTML = "Devil Fruits correct: <span class='score'>0</span>";
-                scoreLabel.innerHTML = "Devil Fruits incorrect: <span class='incorrect'>0</span>";
+                scoreText = `Devil Fruits correct: <span id='quiz-score'>${correctAnswers}</span>`;
+                incorrectText = `Devil Fruits incorrect: <span id='quiz-incorrect'>${incorrectAnswers}</span>`;
                 break;
             default:
                 break;
         }
+
+        // Update the HTML content
+        scoreTitle.innerHTML = scoreText;
+        scoreLabel.innerHTML = incorrectText;
     }
 
     function getNextQuestion(quizType) {
@@ -210,6 +216,13 @@ document.addEventListener("DOMContentLoaded", function() {
     // Focuses on the quiz input for the user
     function focusAnswerBox() {
         document.getElementById("quiz-input").focus();
+    }
+
+    function resetQuizSession() {
+        correctAnswers = 0;
+        incorrectAnswers = 0;
+        scoreElement.textContent = 0;
+        incorrectElement.textContent = 0;
     }
 
     // Show Quiz Selection Buttons
@@ -269,24 +282,13 @@ document.addEventListener("DOMContentLoaded", function() {
         document.getElementById("quiz-selection").classList.add("hidden");
         quizSection.classList.remove("hidden");
         hideContainers();
+
         showRandomDevilFruit();
         focusAnswerBox();
     });
 
     saveBackButton.addEventListener("click", function() {
-        // Get the current scores
-        const currentCorrect = parseInt(scoreElement.textContent) || 0;
-        const currentIncorrect = parseInt(incorrectElement.textContent) || 0;
-
-        correctAnswers += currentCorrect;
-        incorrectAnswers += currentIncorrect;
-
-        // Update scores in the table
-        updateScoresTable();
-
-        // Reset the displayed scores
-        scoreElement.textContent = 0;
-        incorrectElement.textContent = 0;
+        resetQuizSession();
 
         quizSection.classList.add("hidden");
         document.querySelector(".main-area").style.display = "flex";
@@ -339,20 +341,24 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
         if (isCorrect) {
-            scoreElement.textContent = parseInt(scoreElement.textContent) + 1;
+            correctAnswers++;
         } else {
-            incorrectElement.textContent = parseInt(incorrectElement.textContent) + 1;
+            incorrectAnswers++;
         }
+
+        scoreElement.textContent = correctAnswers;
+        incorrectElement.textContent = incorrectAnswers;
 
         if (quizType === "Characters") {
             quizSilhouetteImage.classList.add("hidden");
             quizColoredImage.classList.remove("hidden");
         }
 
-        setTimeout(function() {
+        updateScoresTable();
 
+
+        setTimeout(function() {
             getNextQuestion(scoreTitle.textContent.trim().split(" ")[0]);
-            updateScoresTable();
         }, 2000);
 
         document.getElementById("quiz-input").value = "";

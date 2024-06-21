@@ -205,12 +205,12 @@ body {
     margin: 0;
 }
 
-.score {
+#quiz-score {
     color: #00E676;
     font-weight: bold;
 }
 
-.incorrect {
+#quiz-incorrect {
     color: #D32F2F;
     font-weight: bold;
 }
