@@ -222,6 +222,12 @@ document.addEventListener("DOMContentLoaded", function() {
     charactersButton.addEventListener("click", function() {
         document.getElementById("quiz-selection").classList.add("hidden");
         quizSection.classList.remove("hidden");
+        if (imageContainer.classList.contains("hidden")) {
+            imageContainer.classList.remove("hidden");
+        }
+        if (!quoteContainer.classList.contains("hidden")) {
+            quoteContainer.classList.add("hidden");
+        }
 
         showRandomCharacter();
         focusAnswerBox();
@@ -231,6 +237,12 @@ document.addEventListener("DOMContentLoaded", function() {
     placesButton.addEventListener("click", function() {
         document.getElementById("quiz-selection").classList.add("hidden");
         quizSection.classList.remove("hidden");
+        if (imageContainer.classList.contains("hidden")) {
+            imageContainer.classList.remove("hidden");
+        }
+        if (!quoteContainer.classList.contains("hidden")) {
+            quoteContainer.classList.add("hidden");
+        }
 
         showRandomPlace();
         focusAnswerBox();
@@ -249,6 +261,12 @@ document.addEventListener("DOMContentLoaded", function() {
     devilFruitsButton.addEventListener("click", function() {
         document.getElementById("quiz-selection").classList.add("hidden");
         quizSection.classList.remove("hidden");
+        if (imageContainer.classList.contains("hidden")) {
+            imageContainer.classList.remove("hidden");
+        }
+        if (!quoteContainer.classList.contains("hidden")) {
+            quoteContainer.classList.add("hidden");
+        }
 
         showRandomDevilFruit();
         focusAnswerBox();
