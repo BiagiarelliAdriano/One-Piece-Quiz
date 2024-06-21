@@ -16,7 +16,8 @@ document.addEventListener("DOMContentLoaded", function() {
     const quizSection = document.getElementById("quiz-section");
     const quizQuestion = document.getElementById("quiz-question");
     const quizAnswer = document.getElementById("quiz-input");
-    const quizImage = document.getElementById("quiz-image");
+    const quizSilhouetteImage = document.getElementById("silhouette-image");
+    const quizColoredImage = document.getElementById("colored-image");
     const imageContainer = document.querySelector(".image-container");
     const quizQuote = document.getElementById("quiz-quote");
     const quoteContainer = document.getElementById("quote-container");
@@ -99,6 +100,7 @@ document.addEventListener("DOMContentLoaded", function() {
     let currentDevilFruit;
     let correctAnswers = 0;
     let incorrectAnswers = 0;
+    let quizType;
 
     // Characters Section Quiz
     function showRandomCharacter() {
@@ -106,8 +108,10 @@ document.addEventListener("DOMContentLoaded", function() {
         const randomIndex = Math.floor(Math.random() * characters.length);
         currentCharacter = characters[randomIndex];
         quizQuestion.textContent = "Who is this?";
-        quizImage.src = currentCharacter.src;
-        quizImage.classList.remove("hidden");
+        quizSilhouetteImage.src = currentCharacter.src;
+        quizColoredImage.src = characterAnswers[randomIndex].src;
+        quizSilhouetteImage.classList.remove("hidden");
+        quizColoredImage.classList.add("hidden");
         quizAnswer.textContent = ""; // Clear answer text area
         updateScoreTitle("Characters");
 
@@ -118,8 +122,8 @@ document.addEventListener("DOMContentLoaded", function() {
         const randomIndex = Math.floor(Math.random() * places.length);
         currentPlace = places[randomIndex];
         quizQuestion.textContent = "Where is this place?";
-        quizImage.src = currentPlace.src;
-        quizImage.classList.remove("hidden");
+        quizSilhouetteImage.src = currentPlace.src;
+        quizSilhouetteImage.classList.remove("hidden");
         quizAnswer.textContent = "";
         updateScoreTitle("Places");
     }
@@ -141,8 +145,8 @@ document.addEventListener("DOMContentLoaded", function() {
         const randomIndex = Math.floor(Math.random() * devilFruits.length);
         currentDevilFruit = devilFruits[randomIndex];
         quizQuestion.textContent = "What is this Devil Fruit?";
-        quizImage.src = currentDevilFruit.src;
-        quizImage.classList.remove("hidden");
+        quizSilhouetteImage.src = currentDevilFruit.src;
+        quizSilhouetteImage.classList.remove("hidden");
         quizAnswer.textContent = "";
         updateScoreTitle("Devil Fruits");
     }
@@ -340,8 +344,13 @@ document.addEventListener("DOMContentLoaded", function() {
             incorrectElement.textContent = parseInt(incorrectElement.textContent) + 1;
         }
 
+        if (quizType === "Characters") {
+            quizSilhouetteImage.classList.add("hidden");
+            quizColoredImage.classList.remove("hidden");
+        }
 
         setTimeout(function() {
+
             getNextQuestion(scoreTitle.textContent.trim().split(" ")[0]);
             updateScoresTable();
         }, 2000);
