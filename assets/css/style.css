@@ -156,6 +156,22 @@ body {
     font-size: 13px;
 }
 
+#quote-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    padding: 20px;
+}
+
+#quiz-quote {
+    font-size: clamp(1rem, 2vw + 1rem, 3rem); /* Responsive font size */
+    text-align: center;
+    max-width: 80%;
+    margin: auto;
+    word-wrap: break-word; /* Ensure long quotes wrap correctly */
+}
+
 .answer {
     font-size: 18px;
     padding: 12px 24px;
