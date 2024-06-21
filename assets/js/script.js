@@ -236,7 +236,7 @@ document.addEventListener("DOMContentLoaded", function() {
         quizType = "Characters";
         document.getElementById("quiz-selection").classList.add("hidden");
         quizSection.classList.remove("hidden");
-        hideContainers()
+        hideContainers();
 
         showRandomCharacter();
         focusAnswerBox();
@@ -247,7 +247,7 @@ document.addEventListener("DOMContentLoaded", function() {
         quizType = "Places";
         document.getElementById("quiz-selection").classList.add("hidden");
         quizSection.classList.remove("hidden");
-        hideContainers()
+        hideContainers();
 
         showRandomPlace();
         focusAnswerBox();
@@ -268,7 +268,7 @@ document.addEventListener("DOMContentLoaded", function() {
         quizType = "Devil Fruits";
         document.getElementById("quiz-selection").classList.add("hidden");
         quizSection.classList.remove("hidden");
-        hideContainers()
+        hideContainers();
         showRandomDevilFruit();
         focusAnswerBox();
     });
