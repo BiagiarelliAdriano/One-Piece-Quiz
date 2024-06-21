@@ -128,8 +128,8 @@ document.addEventListener("DOMContentLoaded", function() {
         const randomIndex = Math.floor(Math.random() * quotes.length);
         currentQuote = quotes[randomIndex];
         quizQuestion.textContent = "Who said this?";
-        quizImage.src = currentQuote.src;
-        quizImage.classList.remove("hidden");
+        quizQuote.textContent = currentQuote.quote;
+        quoteContainer.classList.remove("hidden");
         quizAnswer.textContent = "";
         updateScoreTitle("Quotes");
     }
