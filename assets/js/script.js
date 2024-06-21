@@ -17,6 +17,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const quizQuestion = document.getElementById("quiz-question");
     const quizAnswer = document.getElementById("quiz-input");
     const quizImage = document.getElementById("quiz-image");
+    const imageContainer = document.querySelector(".image-container");
     const quizQuote = document.getElementById("quiz-quote");
     const quoteContainer = document.getElementById("quote-container");
     const scoreArea = document.querySelector(".score-area");
@@ -129,6 +130,7 @@ document.addEventListener("DOMContentLoaded", function() {
         currentQuote = quotes[randomIndex];
         quizQuestion.textContent = "Who said this?";
         quizQuote.textContent = currentQuote.quote;
+        imageContainer.classList.add("hidden");
         quoteContainer.classList.remove("hidden");
         quizAnswer.textContent = "";
         updateScoreTitle("Quotes");
