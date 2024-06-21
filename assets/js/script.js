@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const devilFruitsButton = document.getElementById("fruits-quiz");
     const backButton = document.getElementById("back-button");
     const saveBackButton = document.getElementById("save-back-button");
-    const submitAnswer = document.querySelector(".answer");
+    const submitAnswerButton = document.querySelector(".answer");
     const scoreElement = document.querySelector(".score");
     const incorrectElement = document.querySelector(".incorrect");
     const scoresButton = document.getElementById("scores-button");
@@ -58,14 +58,14 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Places array
     const places = [
-        { src: "assets/images/places/amazonlily.jpg", name: "amazon lily"},
-        { src: "assets/images/places/littlegarden.jpg", name: "little garden"},
-        { src: "assets/images/places/ohara.jpg", name: "ohara"},
-        { src: "assets/images/places/shandora.jpg", name: "shandora"},
-        { src: "assets/images/places/wano.jpg", name: ["wano", "land of wano"]},
-        { src: "assets/images/places/water7.jpg", name: "water 7"},
-        { src: "assets/images/places/weatheria.jpg", name: "weatheria"},
-        { src: "assets/images/places/zou.jpg", name: "zou"},
+        { src: "assets/images/places/amazonlily.jpg", names: ["amazon lily"]},
+        { src: "assets/images/places/littlegarden.jpg", names: ["little garden"]},
+        { src: "assets/images/places/ohara.jpg", names: ["ohara"]},
+        { src: "assets/images/places/shandora.jpg", names: ["shandora"]},
+        { src: "assets/images/places/wano.jpg", names: ["wano", "land of wano"]},
+        { src: "assets/images/places/water7.jpg", names: ["water 7"]},
+        { src: "assets/images/places/weatheria.jpg", names: ["weatheria"]},
+        { src: "assets/images/places/zou.jpg", names: ["zou"]},
     ];
 
     // Quotes array
@@ -87,7 +87,7 @@ document.addEventListener("DOMContentLoaded", function() {
         { src: "assets/images/devilfruits/dorudorunomi.png", name: "doru doru no mi"},
         { src: "assets/images/devilfruits/gomugomunomi.png", name: "gomu gomu no mi"},
         { src: "assets/images/devilfruits/kagekagenomi.png", name: "kage kage no mi"},
-        { src: "assets/images/devilfruits/merameranomi.png", name: "merameranomi"},
+        { src: "assets/images/devilfruits/merameranomi.png", name: "mera mera no mi"},
         { src: "assets/images/devilfruits/opeopenomi.png", name: "ope ope no mi"},
         { src: "assets/images/devilfruits/sunasunanomi.png", name: "suna suna no mi"},
         { src: "assets/images/devilfruits/yomiyominomi.png", name: "yomi yomi no mi"},
@@ -152,6 +152,15 @@ document.addEventListener("DOMContentLoaded", function() {
         document.querySelector("#scores-table tr:nth-child(2) td:last-child").textContent = incorrectAnswers;
     }
 
+    function hideContainers() {
+        if (imageContainer.classList.contains("hidden")) {
+            imageContainer.classList.remove("hidden");
+        }
+        if (!quoteContainer.classList.contains("hidden")) {
+            quoteContainer.classList.add("hidden");
+        }
+    }
+
     function updateScoreTitle(quizType) {
         switch (quizType) {
             case "Characters":
@@ -186,10 +195,11 @@ document.addEventListener("DOMContentLoaded", function() {
             case "Quotes":
                 showRandomQuote();
                 break;
-            case "Devil Fruits":
+            case "Devil":
                 showRandomDevilFruit();
                 break;
             default:
+                console.log("Unknown quiz type in getNextQuestion:", quizType);
                 break;
         }
     }
@@ -220,14 +230,10 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Show Characters Quiz
     charactersButton.addEventListener("click", function() {
+        quizType = "Characters";
         document.getElementById("quiz-selection").classList.add("hidden");
         quizSection.classList.remove("hidden");
-        if (imageContainer.classList.contains("hidden")) {
-            imageContainer.classList.remove("hidden");
-        }
-        if (!quoteContainer.classList.contains("hidden")) {
-            quoteContainer.classList.add("hidden");
-        }
+        hideContainers()
 
         showRandomCharacter();
         focusAnswerBox();
@@ -235,14 +241,10 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Show Places Quiz
     placesButton.addEventListener("click", function() {
+        quizType = "Places";
         document.getElementById("quiz-selection").classList.add("hidden");
         quizSection.classList.remove("hidden");
-        if (imageContainer.classList.contains("hidden")) {
-            imageContainer.classList.remove("hidden");
-        }
-        if (!quoteContainer.classList.contains("hidden")) {
-            quoteContainer.classList.add("hidden");
-        }
+        hideContainers()
 
         showRandomPlace();
         focusAnswerBox();
@@ -250,6 +252,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Show Quotes Quiz
     quotesButton.addEventListener("click", function() {
+        quizType = "Quotes";
         document.getElementById("quiz-selection").classList.add("hidden");
         quizSection.classList.remove("hidden");
 
@@ -259,15 +262,10 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Show Devil Fruits Quiz
     devilFruitsButton.addEventListener("click", function() {
+        quizType = "Devil Fruits";
         document.getElementById("quiz-selection").classList.add("hidden");
         quizSection.classList.remove("hidden");
-        if (imageContainer.classList.contains("hidden")) {
-            imageContainer.classList.remove("hidden");
-        }
-        if (!quoteContainer.classList.contains("hidden")) {
-            quoteContainer.classList.add("hidden");
-        }
-
+        hideContainers()
         showRandomDevilFruit();
         focusAnswerBox();
     });
@@ -294,31 +292,54 @@ document.addEventListener("DOMContentLoaded", function() {
     // Submit using the Enter Key
     document.getElementById("quiz-input").addEventListener("keydown", function(event) {
         if (event.key === "Enter") {
-            submitAnswer.click();
+            submitAnswer();
         }
     })
 
-    submitAnswer.addEventListener("click", function() {
-        const userAnswer = document.getElementById("quiz-input").value.toLowerCase();
+    function submitAnswer() {
+        const userAnswer = document.getElementById("quiz-input").value.toLowerCase().trim();
         let isCorrect = false;
 
-        switch (scoreTitle.textContent) {
-            case "Characters correct:":
+        console.log("Quiz type:", scoreTitle.textContent.split("")[0]);
+
+        switch (quizType) {
+            case "Characters":
+                console.log("User Answer:", userAnswer);
+                console.log("Expected Answers:", currentCharacter.names);
                 isCorrect = currentCharacter.names.includes(userAnswer);
+                if (!isCorrect) {
+                    quizAnswer.textContent = `Correct answer: ${currentCharacter.names[0]}`;
+                }
                 break;
-            case "Places correct:":
+            case "Places":
+                console.log("User Answer:", userAnswer);
+                console.log("Expected Answers:", currentPlace.names);
                 isCorrect = userAnswer === currentPlace.name;
-                quizAnswer.textContent = "Correct answer: ${currentPlace.name}";
+                if (!isCorrect) {
+                    quizAnswer.textContent = `Correct answer: ${currentPlace.names[0]}`;
+                }
                 break;
-            case "Quotes correct:":
-                isCorrect = userAnswer === currentQuote.character;
-                quizAnswer.textContent = "Correct answer: ${currentQuote.character}";
-            case "Devil Fruits correct:":
-                isCorrect = currentDevilFruit.names.includes(userAnswer);
+            case "Quotes":
+                console.log("User Answer:", userAnswer);
+                console.log("Expected Answers:", currentQuote.character);
+                isCorrect = currentQuote.character.includes(userAnswer);
+                if (!isCorrect) {
+                    quizAnswer.textContent = `Correct answer: ${currentQuote.character[0]}`;
+                }
+            case "Devil Fruits":
+                console.log("User Answer:", userAnswer);
+                console.log("Expected Answer:", currentDevilFruit.name);
+                isCorrect = currentDevilFruit.name.includes(userAnswer);
+                if (!isCorrect) {
+                    quizAnswer.textContent = `Correct answer: ${currentDevilFruit.name}`;
+                }
                 break;
             default:
+                console.log("Unknown quiz type");
                 break;
         }
+
+        console.log("Is Correct:", isCorrect);
 
         if (isCorrect) {
             scoreElement.textContent = parseInt(scoreElement.textContent) + 1;
@@ -326,11 +347,14 @@ document.addEventListener("DOMContentLoaded", function() {
             incorrectElement.textContent = parseInt(incorrectElement.textContent) + 1;
         }
 
+        console.log("Correct Answers:", scoreElement.textContent);
+        console.log("Incorrect Answers:", incorrectElement.textContent);
+
         setTimeout(function() {
             getNextQuestion(scoreTitle.textContent.trim().split(" ")[0]);
             updateScoresTable();
         }, 2000);
 
         document.getElementById("quiz-input").value = "";
-    });
+    };
 });
