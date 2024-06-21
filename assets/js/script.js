@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     const quizSection = document.getElementById("quiz-section");
     const quizQuestion = document.getElementById("quiz-question");
-    const quizAnswer = document.getElementById("quiz-question");
+    const quizAnswer = document.getElementById("quiz-input");
     const quizImage = document.getElementById("quiz-image");
     const quizQuote = document.getElementById("quiz-quote");
     const quoteContainer = document.getElementById("quote-container");
@@ -61,7 +61,7 @@ document.addEventListener("DOMContentLoaded", function() {
         { src: "assets/images/places/littlegarden.jpg", name: "little garden"},
         { src: "assets/images/places/ohara.jpg", name: "ohara"},
         { src: "assets/images/places/shandora.jpg", name: "shandora"},
-        { src: "assets/images/places/wano.jpg", name: "wano"},
+        { src: "assets/images/places/wano.jpg", name: ["wano", "land of wano"]},
         { src: "assets/images/places/water7.jpg", name: "water 7"},
         { src: "assets/images/places/weatheria.jpg", name: "weatheria"},
         { src: "assets/images/places/zou.jpg", name: "zou"},
