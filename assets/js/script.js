@@ -314,25 +314,25 @@ document.addEventListener("DOMContentLoaded", function() {
             case "Characters":
                 isCorrect = currentCharacter.names.includes(userAnswer);
                 if (!isCorrect) {
-                    quizAnswer.textContent = `Correct answer: ${currentCharacter.names[0]}`;
+                    quizQuestion.textContent = `Correct answer: ${currentCharacter.names[0]}`;
                 }
                 break;
             case "Places":
                 isCorrect = currentPlace.names.includes(userAnswer);
                 if (!isCorrect) {
-                    quizAnswer.textContent = `Correct answer: ${currentPlace.names[0]}`;
+                    quizQuestion.textContent = `Correct answer: ${currentPlace.names[0]}`;
                 }
                 break;
             case "Quotes":
                 isCorrect = currentQuote.character.includes(userAnswer);
                 if (!isCorrect) {
-                    quizAnswer.textContent = `Correct answer: ${currentQuote.character[0]}`;
+                    quizQuestion.textContent = `Correct answer: ${currentQuote.character[0]}`;
                 }
                 break;
             case "Devil Fruits":
                 isCorrect = currentDevilFruit.name === userAnswer;
                 if (!isCorrect) {
-                    quizAnswer.textContent = `Correct answer: ${currentDevilFruit.name}`;
+                    quizQuestion.textContent = `Correct answer: ${currentDevilFruit.name}`;
                 }
                 break;
             default:
