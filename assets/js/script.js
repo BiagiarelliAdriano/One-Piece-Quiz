@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Characters silhouette array
     const characters = [
-        { src: "assets/images/characters/silhouette/ace.png", names: ["ace", "portgas d ace", "portgas"]},
+        { src: "assets/images/characters/silhouette/ace.png", names: ["ace", "portgas d ace", "portgas", "portgas d. ace"]},
         { src: "assets/images/characters/silhouette/brook.png", names: ["brook"]},
         { src: "assets/images/characters/silhouette/chopper.png", names: ["chopper", "tony tony chopper", "tony chopper"]},
         { src: "assets/images/characters/silhouette/franky.png", names: ["franky", "cutty flam"]},
