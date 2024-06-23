@@ -229,13 +229,82 @@ body {
 }
 
 @media screen and (min-width: 768px) {
+    /* Main area styling */
     .main-area {
         justify-content: flex-start;
         padding-top: 60px;
     }
 
+    /* Quiz selection area styling */
     #quiz-selection {
         justify-content: flex-start;
         padding-top: 60px;
+    }
+
+    /* Quiz section area styling*/
+    #quiz-section {
+        justify-content: space-between;
+        height: 100%;
+    }
+
+    .quiz-content {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    .left-section, .right-section {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .left-section {
+        align-items: flex-start;
+        padding-left: 20px;
+    }
+
+    .right-section {
+        align-items: flex-end;
+        padding-right: 20px;
+    }
+
+    label[for="quiz-input"] {
+        font-size: 2rem;
+    }
+
+    .score-area {
+        flex-direction: column;
+    }
+
+    .score-area p {
+        font-size: 1.3rem;
+    }
+
+    #save-back-button {
+        position: absolute;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .left-section {
+        padding-left: 60px;
+    }
+
+    .right-section {
+        padding-right: 60px;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .left-section {
+        padding-left: 200px;
+    }
+
+    .right-section {
+        padding-right: 200px;
     }
 }
