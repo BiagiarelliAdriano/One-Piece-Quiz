@@ -95,6 +95,7 @@ document.addEventListener("DOMContentLoaded", function() {
     let scoreElement = document.getElementById("quiz-score");
     let incorrectElement = document.getElementById("quiz-incorrect");
     let quizType;
+    let lastQuestion;
 
     function updateScoresTable() {
         document.querySelector("#scores-table tr:nth-child(1) td:last-child").textContent = correctAnswers;
@@ -114,7 +115,12 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     function getRandomQuestion(arr) {
-        return arr[Math.floor(Math.random() * arr.length)];
+        let question;
+        do {
+            question = arr[Math.floor(Math.random() * arr.length)];
+        } while (question === lastQuestion);
+        lastQuestion = question;
+        return question;
     }
 
     function showQuestion() {
