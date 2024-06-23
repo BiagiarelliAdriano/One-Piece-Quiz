@@ -227,3 +227,15 @@ body {
 #save-back-button:hover {
     background-color: #BBDEFB;
 }
+
+@media screen and (min-width: 768px) {
+    .main-area {
+        justify-content: flex-start;
+        padding-top: 60px;
+    }
+
+    #quiz-selection {
+        justify-content: flex-start;
+        padding-top: 60px;
+    }
+}
