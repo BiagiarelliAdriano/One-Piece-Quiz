@@ -53,25 +53,31 @@
 
     <!-- Quiz section -->
      <div id="quiz-section" class="hidden">
-        <h2 id="quiz-question">Question will appear here</h2>
-        <div class="image-container">
-            <img id="silhouette-image" class="quiz-image" src="" alt="Character Silhouette">
-            <img id="colored-image" class="quiz-image" src="" alt="Character Colored">
-        </div>
-        <div id="quote-container" class="hidden">
-            <p id="quiz-quote"></p>
-        </div>
-        <label for="quiz-input">Enter your answer here:</label>
-        <input type="text" id="quiz-input" pattern="[A-Za-z]+" title="Write answer here...">
-        <input type="submit" value="Answer" class="answer">
+        <div class="quiz-content">
+            <div class="left-section">
+                <h2 id="quiz-question">Question will appear here</h2>
+                <div class="image-container">
+                    <img id="silhouette-image" class="quiz-image" src="" alt="Character Silhouette">
+                    <img id="colored-image" class="quiz-image" src="" alt="Character Colored">
+                </div>
+                <div id="quote-container" class="hidden">
+                    <p id="quiz-quote"></p>
+                </div>
+            </div>
+            <div class="right-section">
+                <label for="quiz-input">Enter your answer here:</label>
+                <input type="text" id="quiz-input" pattern="[A-Za-z]+" title="Write answer here...">
+                <input type="submit" value="Answer" class="answer">
 
-        <!-- Score section -->
-        <div class="score-area">
-            <p class="score-title">Pirates caught: <span id="quiz-score">0</span></p>
-            <p class="score-label">Pirates escaped: <span id="quiz-incorrect">0</span></p>
+                <!-- Score section -->
+                <div class="score-area">
+                    <p class="score-title">Pirates caught: <span id="quiz-score">0</span></p>
+                    <p class="score-label">Pirates escaped: <span id="quiz-incorrect">0</span></p>
+                </div>
+            </div>
         </div>
 
-        <input type="button" value="Save & Back" id="save-back-button">
+            <input type="button" value="Save & Back" id="save-back-button">
      </div>
 
      
