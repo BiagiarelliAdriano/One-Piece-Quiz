@@ -61,7 +61,7 @@ document.addEventListener("DOMContentLoaded", function() {
         { src: "assets/images/places/ohara.jpg", names: ["ohara"]},
         { src: "assets/images/places/shandora.jpg", names: ["shandora"]},
         { src: "assets/images/places/wano.jpg", names: ["wano", "land of wano"]},
-        { src: "assets/images/places/water7.jpg", names: ["water 7"]},
+        { src: "assets/images/places/water7.jpg", names: ["water 7", "water seven"]},
         { src: "assets/images/places/weatheria.jpg", names: ["weatheria"]},
         { src: "assets/images/places/zou.jpg", names: ["zou"]},
     ];
