@@ -193,7 +193,7 @@ document.addEventListener("DOMContentLoaded", function() {
         updateScoresTable();
         resetQuizSession();
         quizSection.classList.add("hidden");
-        document.querySelector(".main-area").style.display = "flex";
+        document.getElementById("quiz-selection").classList.remove("hidden");
     });
 
     submitAnswerButton.addEventListener("click", submitAnswer);
