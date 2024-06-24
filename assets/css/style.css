@@ -1,8 +1,15 @@
 /* General styles */
 body {
-    background-color: #42A5F5;
+    background-image: url(../images/background.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     font-family: "Lato", sans-serif;
     color: #445361;
+    margin: 60px;
+    padding: 0;
+    height: 100vh;
+    overflow: hidden;
     text-align: center;
 }
 
@@ -331,10 +338,14 @@ body {
     }
     
     .left-section {
-        padding-left: 200px;
+        padding-left: 50px;
+    }
+
+    #quiz-section h2 {
+        font-size: 40px;
     }
 
     .right-section {
-        padding-right: 200px;
+        padding-right: 50px;
     }
 }
