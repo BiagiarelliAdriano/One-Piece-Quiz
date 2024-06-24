@@ -5,7 +5,7 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     font-family: "Lato", sans-serif;
-    color: #445361;
+    color: #757575;
     margin: 60px;
     padding: 0;
     height: 100vh;
@@ -19,7 +19,7 @@ body {
 
 /* Heading styles */
 .logo {
-    width: 50%;
+    width: 100%;
     height: auto;
     display: block;
     margin: 20px auto 0 auto;
@@ -27,7 +27,6 @@ body {
 
 /* Home page area */
 .main-area {
-    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -35,7 +34,7 @@ body {
 }
 
 .main-area p {
-    font-size: 42px;
+    font-size: 24px;
     margin: 20px 0;
 }
 
@@ -97,7 +96,6 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100%;
 }
 
 .quiz-buttons {
@@ -132,7 +130,6 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100%;
 }
 
 #quiz-section h2 {
@@ -145,7 +142,7 @@ body {
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 280px;
+    height: 230px;
     overflow: hidden; /* Hide overflow if images are larger */
 }
 
@@ -167,7 +164,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 300px;
+    height: 220px;
     width: 80%;
     max-width: 800px;
     margin: auto;
@@ -236,6 +233,10 @@ body {
 }
 
 @media screen and (min-width: 768px) {
+    .logo {
+        height: 50%;
+    }
+    
     /* Main area styling */
     .main-area {
         justify-content: flex-start;
