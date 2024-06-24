@@ -225,6 +225,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
         if (isCorrect) {
             correctAnswers++;
+            quizQuestion.textContent = "Correct!";
             if (quizType === "Characters") {
                 quizSilhouetteImage.classList.add("hidden");
                 quizColoredImage.classList.remove("hidden");
