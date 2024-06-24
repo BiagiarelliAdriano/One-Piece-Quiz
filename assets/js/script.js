@@ -25,68 +25,68 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Data Arrays
     const characters = [
-        { src: "assets/images/characters/silhouette/ace.png", names: ["ace", "portgas d ace", "portgas"]},
-        { src: "assets/images/characters/silhouette/brook.png", names: ["brook"]},
-        { src: "assets/images/characters/silhouette/chopper.png", names: ["chopper", "tony tony chopper", "tony chopper"]},
-        { src: "assets/images/characters/silhouette/franky.png", names: ["franky", "cutty flam"]},
-        { src: "assets/images/characters/silhouette/jimbei.png", names: ["jimbei", "jinbei", "jinbe"]},
-        { src: "assets/images/characters/silhouette/monkeydluffy.png", names: ["luffy", "monkey d luffy"]},
-        { src: "assets/images/characters/silhouette/nami.png", names: ["nami"]},
-        { src: "assets/images/characters/silhouette/nicorobin.png", names: ["robin", "nico robin", "nico"]},
-        { src: "assets/images/characters/silhouette/roronoazoro.png", names: ["zoro", "roronoa zoro", "roronoa"]},
-        { src: "assets/images/characters/silhouette/sanji.png", names: ["sanji", "vismoke sanji"]},
-        { src: "assets/images/characters/silhouette/shanks.png", names: ["shanks", "red-haired", "red-haired shanks", "red haired"]},
-        { src: "assets/images/characters/silhouette/usopp.png", names: ["usopp"]}
+        { src: "assets/images/characters/silhouette/ace.png", names: ["Ace", "Portgas D. Ace", "Portgas D Ace", "Portgas"]},
+        { src: "assets/images/characters/silhouette/brook.png", names: ["Brook"]},
+        { src: "assets/images/characters/silhouette/chopper.png", names: ["Chopper", "Tony Tony Chopper", "Tony Chopper"]},
+        { src: "assets/images/characters/silhouette/franky.png", names: ["Franky", "Cutty Flam"]},
+        { src: "assets/images/characters/silhouette/jimbei.png", names: ["Jinbe", "Jinbei", "Jimbei"]},
+        { src: "assets/images/characters/silhouette/monkeydluffy.png", names: ["Monkey D. Luffy", "Monkey D Luffy", "Luffy"]},
+        { src: "assets/images/characters/silhouette/nami.png", names: ["Nami"]},
+        { src: "assets/images/characters/silhouette/nicorobin.png", names: ["Nico Robin", "Robin", "Nico"]},
+        { src: "assets/images/characters/silhouette/roronoazoro.png", names: ["Roronoa Zoro", "Zoro", "Roronoa"]},
+        { src: "assets/images/characters/silhouette/sanji.png", names: ["Sanji", "Vismoke Sanji"]},
+        { src: "assets/images/characters/silhouette/shanks.png", names: ["Shanks", "Red-haired", "Red-haired Shanks", "Red haired"]},
+        { src: "assets/images/characters/silhouette/usopp.png", names: ["Usopp"]}
     ];
 
 
     const characterAnswers = [
-        { src: "assets/images/characters/colored/ace.png", names: ["ace", "portgas d ace", "portgas", "portgas d. ace"]},
-        { src: "assets/images/characters/colored/brook.png", names: ["brook"]},
-        { src: "assets/images/characters/colored/chopper.png", names: ["chopper", "tony tony chopper", "tony chopper"]},
-        { src: "assets/images/characters/colored/franky.png", names: ["franky", "cutty flam"]},
-        { src: "assets/images/characters/colored/jimbei.png", names: ["jimbei", "jinbei", "jinbe"]},
-        { src: "assets/images/characters/colored/monkeydluffy.png", names: ["luffy", "monkey d luffy", "monkey d. luffy"]},
-        { src: "assets/images/characters/colored/nami.png", names: ["nami"]},
-        { src: "assets/images/characters/colored/nicorobin.png", names: ["robin", "nico robin", "nico"]},
-        { src: "assets/images/characters/colored/roronoazoro.png", names: ["zoro", "roronoa zoro", "roronoa"]},
-        { src: "assets/images/characters/colored/sanji.png", names: ["sanji", "vismoke sanji"]},
-        { src: "assets/images/characters/colored/shanks.png", names: ["shanks", "red-haired", "red-haired shanks", "red haired"]},
-        { src: "assets/images/characters/colored/usopp.png", names: ["usopp"]},
+        { src: "assets/images/characters/colored/ace.png", names: ["Ace", "Portgas D. Ace", "Portgas D Ace", "Portgas"]},
+        { src: "assets/images/characters/colored/brook.png", names: ["Brook"]},
+        { src: "assets/images/characters/colored/chopper.png", names: ["Chopper", "Tony Tony Chopper", "Tony Chopper"]},
+        { src: "assets/images/characters/colored/franky.png", names: ["Franky", "Cutty Flam"]},
+        { src: "assets/images/characters/colored/jimbei.png", names: ["Jinbe", "Jinbei", "Jimbei"]},
+        { src: "assets/images/characters/colored/monkeydluffy.png", names: ["Monkey D. Luffy", "Monkey D Luffy", "Luffy"]},
+        { src: "assets/images/characters/colored/nami.png", names: ["Nami"]},
+        { src: "assets/images/characters/colored/nicorobin.png", names: ["Nico Robin", "Robin", "Nico"]},
+        { src: "assets/images/characters/colored/roronoazoro.png", names: ["Roronoa Zoro", "Zoro", "Roronoa"]},
+        { src: "assets/images/characters/colored/sanji.png", names: ["Sanji", "Vismoke Sanji"]},
+        { src: "assets/images/characters/colored/shanks.png", names: ["Shanks", "Red-haired", "Red-haired Shanks", "Red haired"]},
+        { src: "assets/images/characters/colored/usopp.png", names: ["Usopp"]}
     ];
 
     const places = [
-        { src: "assets/images/places/amazonlily.jpg", names: ["amazon lily"]},
-        { src: "assets/images/places/littlegarden.jpg", names: ["little garden"]},
-        { src: "assets/images/places/ohara.jpg", names: ["ohara"]},
-        { src: "assets/images/places/shandora.jpg", names: ["shandora"]},
-        { src: "assets/images/places/wano.jpg", names: ["wano", "land of wano"]},
-        { src: "assets/images/places/water7.jpg", names: ["water 7", "water seven"]},
-        { src: "assets/images/places/weatheria.jpg", names: ["weatheria"]},
-        { src: "assets/images/places/zou.jpg", names: ["zou"]},
+        { src: "assets/images/places/amazonlily.jpg", names: ["Amazon Lily"]},
+        { src: "assets/images/places/littlegarden.jpg", names: ["Little Garden"]},
+        { src: "assets/images/places/ohara.jpg", names: ["Ohara"]},
+        { src: "assets/images/places/shandora.jpg", names: ["Shandora"]},
+        { src: "assets/images/places/wano.jpg", names: ["Wano", "Land of Wano"]},
+        { src: "assets/images/places/water7.jpg", names: ["Water Seven", "Water 7"]},
+        { src: "assets/images/places/weatheria.jpg", names: ["Weatheria"]},
+        { src: "assets/images/places/zou.jpg", names: ["Zou"]},
     ];
 
     const quotes = [
-        { quote: "I left everything I gathered together in one place.", character: ["roger", "gold d. roger", "gold roger", "gold d roger"] },
-        { quote: "Nobody hurts a friend of mine!", character: ["shanks", "red-haired", "red-haired shanks", "red haired"] },
-        { quote: "Only I can call my dream stupid!", character: ["zoro", "roronoa", "roronoa zoro"] },
-        { quote: "A man dies when people forget him!", character: ["hiriluk", "dr. hiriluk", "dr hiriluk"] },
-        { quote: "There comes a time when a man must stand and fight. And that is when his friend's dreams are being laughed at!", character: ["usopp"] },
-        { quote: "The dreams of pirates will never end!", character: ["blackbeard", "teach", "marshall d. teach", "marshall d teach"] },
-        { quote: "I want to live!", character: ["robin", "nico", "nico robin"] },
-        { quote: "The flower of friendship can bloom even in hell.", character: ["bon clay", "mr. 2", "mr 2", "bentham"] },
+        { quote: "I left everything I gathered together in one place.", character: ["Gold D. Roger", "Roger", "Gold Roger", "Gold D Roger"] },
+        { quote: "Nobody hurts a friend of mine!", character: ["Shanks", "Red-haired", "Red-haired Shanks", "Red haired"] },
+        { quote: "Only I can call my dream stupid!", character: ["Roronoa Zoro", "Zoro", "Roronoa"]},
+        { quote: "A man dies when people forget him!", character: ["Dr. Hiriluk", "Hiriluk", "Dr Hiriluk"] },
+        { quote: "There comes a time when a man must stand and fight. And that is when his friend's dreams are being laughed at!", character: ["Usopp"] },
+        { quote: "The dreams of pirates will never end!", character: ["Marshall D. Teach", "Teach", "Blackbeard", "Marshall D Teach"] },
+        { quote: "I want to live!", character: ["Nico Robin", "Robin", "Nico"]},
+        { quote: "The flower of friendship can bloom even in hell.", character: ["Bon Clay", "Mr. 2", "Mr 2", "Bentham"] },
         
     ];
 
     const devilFruits = [
-        { src: "assets/images/devilfruits/bomubomunomi.png", name: "bomu bomu no mi"},
-        { src: "assets/images/devilfruits/dorudorunomi.png", name: "doru doru no mi"},
-        { src: "assets/images/devilfruits/gomugomunomi.png", name: "gomu gomu no mi"},
-        { src: "assets/images/devilfruits/kagekagenomi.png", name: "kage kage no mi"},
-        { src: "assets/images/devilfruits/merameranomi.png", name: "mera mera no mi"},
-        { src: "assets/images/devilfruits/opeopenomi.png", name: "ope ope no mi"},
-        { src: "assets/images/devilfruits/sunasunanomi.png", name: "suna suna no mi"},
-        { src: "assets/images/devilfruits/yomiyominomi.png", name: "yomi yomi no mi"},
+        { src: "assets/images/devilfruits/bomubomunomi.png", name: "Bomu Bomu no Mi"},
+        { src: "assets/images/devilfruits/dorudorunomi.png", name: "Doru Doru no Mi"},
+        { src: "assets/images/devilfruits/gomugomunomi.png", name: "Gomu Gomu no Mi"},
+        { src: "assets/images/devilfruits/kagekagenomi.png", name: "Kage Kage no Mi"},
+        { src: "assets/images/devilfruits/merameranomi.png", name: "Mera Mera no Mi"},
+        { src: "assets/images/devilfruits/opeopenomi.png", name: "Ope Ope no Mi"},
+        { src: "assets/images/devilfruits/sunasunanomi.png", name: "Suna Suna no Mi"},
+        { src: "assets/images/devilfruits/yomiyominomi.png", name: "Yomi Yomi no Mi"},
     ];
 
     let currentQuestion; 
