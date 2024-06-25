@@ -1,15 +1,10 @@
 /* General styles */
 body {
-    background-image: url(../images/background.jpg);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    background-color: #42A5F5;
     font-family: "Lato", sans-serif;
-    color: #757575;
-    margin: 60px;
+    color: #424242;
     padding: 0;
     height: 100vh;
-    overflow: hidden;
     text-align: center;
 }
 
@@ -41,7 +36,7 @@ body {
 #play-button {
     font-size: 60px;
     padding: 15px 30px;
-    background-color: #1E88E5;
+    background-color: #1976D2;
     color: white;
     border: none;
 }
@@ -55,7 +50,7 @@ body {
     padding: 10px 20px;
     margin-top: 20px;
     background-color: white;
-    color: #1E88E5;
+    color: #1976D2;
     border: none;
 }
 
@@ -103,7 +98,7 @@ body {
     font-size: 18px;
     padding: 12px 24px;
     margin: 8px;
-    background-color: #1E88E5;
+    background-color: #1976D2;
     color: white;
     border: none;
 }
@@ -117,7 +112,7 @@ body {
     padding: 10px 20px;
     margin-top: 20px;
     background-color: white;
-    color: #1E88E5;
+    color: #1976D2;
     border: none;
 }
 
@@ -143,7 +138,7 @@ body {
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 230px;
+    height: 200px;
     overflow: hidden; /* Hide overflow if images are larger */
 }
 
@@ -234,18 +229,9 @@ body {
 }
 
 @media screen and (min-width: 768px) {
-    .logo {
-        height: 50%;
-    }
     
     /* Main area styling */
     .main-area {
-        justify-content: flex-start;
-        padding-top: 60px;
-    }
-
-    /* Quiz selection area styling */
-    #quiz-selection {
         justify-content: flex-start;
         padding-top: 60px;
     }
@@ -314,25 +300,14 @@ body {
     }
 
     .main-area {
-        flex-direction: row;
+        flex-direction: column;
         justify-content: space-between;
-        align-items: flex-start;
+        align-items: center;
         height: 50vh;
     }
 
-    .left-elements {
-        display: flex;
-        flex-direction: column;
-        align-self: flex-start;
-        padding-left: 60px;
-    }
-
-    .right-elements {
-        display: flex;
-        flex-direction: column;
-        align-self: flex-end;
-        padding-right: 60px;
-        margin: 0;
+    .main-area p {
+        font-size: 42px;
     }
 
     #quiz-selection {
@@ -340,7 +315,11 @@ body {
     }
     
     .left-section {
-        padding-left: 50px;
+        padding-left: 200px;
+    }
+
+    .image-container {
+        height: 400px;
     }
 
     #quiz-section h2 {
@@ -348,6 +327,11 @@ body {
     }
 
     .right-section {
-        padding-right: 50px;
+        padding-right: 200px;
+    }
+
+    #save-back-button {
+        font-size: 22px;
+        padding: 20px;
     }
 }
