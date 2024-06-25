@@ -75,3 +75,19 @@ To deploy the project I followed these steps starting from the main project repo
  3. In the first dropdown menu labeled `Source` I selected the branch of the name `main` from the dropdown.
  4. In the next dropdown labeled `/root` I left as the default option.
  5. Selected Save.
+
+# Credits
+## Content
+- Chatgpt was used for general advice and errors fixing.
+- TinyPNG was used to compress the images for better page performance.
+- MockFlow was used to make the wireframes.
+- ImgBB was used to implement images inside the Readme.md.
+- Font Awesome was used to the favicons.
+- Validator W3 was used to test the HTML code.
+- Jigsaw W3 validator was used to test the CSS code.
+- JSHint was used to test the Javascript code.
+- StackEdit was used to write this Readme.md.
+- Krita was used by me to edit the images for the quizzes.
+
+## Media
+- All the images are from [Pinterest](https://www.pinterest.de/).
