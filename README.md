@@ -50,3 +50,16 @@ And here we are, to the last and more challenging quiz! The user will have to gu
 - I confirmed that the colors and fonts chosen are easy to understand and accessibly by running it through lighthouse in devtools.
 ![Lighthouse test in devtools](https://i.ibb.co/Bc3RT6R/lighthousetest.png)
 -	I confirmed that this project is responsive, looks good and functions on all standard screen sizes using the devtools device toolbar.
+
+## Validator Testing
+- HTML
+	- Two errors were found during the official W3C validator testing. Fixed it by implementing a placeholder image inside the src attributes.
+![HTML W3C official validator test errors](https://i.ibb.co/sy4DXQb/htmltestingerrors.png)
+	- No other errors were returned after these.
+- CSS
+	- No errors were found when passing through the official (Jigsaw) validator.
+- Javascript
+	- No relevant errors were found when passing throught the official JSHint validator.
+
+## Unfixed Bugs
+No unfixed bugs.
