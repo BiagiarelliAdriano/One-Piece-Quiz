@@ -4,6 +4,15 @@ Test your knowledge of the great pirate world in  these ONE PIECE Quizzes! There
 
 ![One Piece Quiz site viewed in different devices](https://i.ibb.co/Mp5Wb7r/Immagine-2024-06-25-101056.png)
 
+# Wireframes
+## Desktop Wireframe
+![Home page wireframe](https://i.ibb.co/HYXh8CT/wireframehomepage.png)
+![Quiz Selection section wireframe](https://i.ibb.co/BspP98Y/wireframequizselectionpage.png)
+![Characters Quiz wireframe](https://i.ibb.co/n7NVJBz/wireframecharactersquiz.png)
+![Places Quiz wireframe](https://i.ibb.co/WH93S8X/wireframeplacesquiz.png)
+![Quotes Quiz wireframe](https://i.ibb.co/L6xvb2T/wireframequotesquiz.png)
+![Devil Fruits Quiz wireframe](https://i.ibb.co/SwmWRSj/wireframedevilfruitquiz.png)
+
 # Features
 ## Home Page
 Very simple and intuitive overall design throughout the page. Easy to understand features, starting with the home page, with just an introductory phrase, a Play button, which will take the user to the next section of the page and a Scores button, where the user will be able to view their current scores result from them playing!
