@@ -20,3 +20,7 @@ A random silhouette representing a character will appear. The user will have to 
 ## Places Quiz
 All of the quizzes have the base functionalities of keeping scores and showing correct answers when the user gives an incorrect answer. In this quiz the user will be presented with a random island or location of the amazing One Piece world and they will have to input the correct name!
 ![View of the Places Quiz](https://i.ibb.co/28ygWvG/placesquiz.png)
+
+## Quotes Quiz
+In this very simple designed quiz the user will be presented with an iconic quote from the One Piece media and they will have to correctly guess who said it!
+![View of the Quotes Quiz](https://i.ibb.co/K6KCzvn/quotesquiz.png)
