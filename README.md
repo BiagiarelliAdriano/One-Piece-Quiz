@@ -16,3 +16,7 @@ Here the users will be able to choose from an array of different quiz categories
 ## Characters Quiz
 A random silhouette representing a character will appear. The user will have to input their answer in the already focused input field. When they input their answer, if it was correct they will get a point and the image will be colored! If they get it incorrect, they will get an incorrect point and the text will change, telling the user what the correct answer was! The user can then click the Save & Back button to save their current score for the Scores Table in the home page and return to the Quiz Selection section to continue on playing!
 ![View of the Characters Quiz](https://i.ibb.co/74XKTT0/charactersquiz.png)
+
+## Places Quiz
+All of the quizzes have the base functionalities of keeping scores and showing correct answers when the user gives an incorrect answer. In this quiz the user will be presented with a random island or location of the amazing One Piece world and they will have to input the correct name!
+![View of the Places Quiz](https://i.ibb.co/28ygWvG/placesquiz.png)
