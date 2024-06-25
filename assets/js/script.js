@@ -170,8 +170,14 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 
     scoresButton.addEventListener("click", function() {
+        scoresButton.classList.add("hidden");
         scoresTable.classList.toggle("hidden");
     });
+
+    scoresTable.addEventListener("click", function() {
+        scoresTable.classList.toggle("hidden");
+        scoresButton.classList.remove("hidden");
+    })
 
     backButton.addEventListener("click", function() {
         document.getElementById("quiz-selection").classList.add("hidden");

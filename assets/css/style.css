@@ -66,6 +66,7 @@ body {
 /* Scores table styles */
 #scores-table {
     margin-top: 20px;
+    background-color: white;
 }
 
 #scores-table table {
@@ -75,7 +76,7 @@ body {
 
 #scores-table td {
     padding: 8px;
-    border: 1px solid white;
+    border: 1px solid black;
 }
 
 #scores-table td:first-child {
