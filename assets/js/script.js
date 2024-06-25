@@ -139,6 +139,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 quizQuestion.textContent = "Where is this place?";
                 quizSilhouetteImage.src = questionData.src;
                 quizSilhouetteImage.classList.remove("hidden");
+                quizColoredImage.classList.add("hidden");
                 break;
             case "Quotes":
                 questionData = getRandomQuestion(quotes);
@@ -146,12 +147,14 @@ document.addEventListener("DOMContentLoaded", function() {
                 quizQuote.textContent = questionData.quote;
                 imageContainer.classList.add("hidden");
                 quoteContainer.classList.remove("hidden");
+                quizColoredImage.classList.add("hidden");
                 break;
             case "Devil Fruits":
                 questionData = getRandomQuestion(devilFruits);
                 quizQuestion.textContent = "What is this Devil Fruit?";
                 quizSilhouetteImage.src = questionData.src;
                 quizSilhouetteImage.classList.remove("hidden");
+                quizColoredImage.classList.add("hidden");
                 break;
         }
         currentQuestion = questionData;
