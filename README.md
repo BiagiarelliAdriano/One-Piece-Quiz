@@ -34,3 +34,10 @@ And here we are, to the last and more challenging quiz! The user will have to gu
 -	I would like to put a relaxing background music from the show to play while the user is in the website.
 -	Like all quizzes, what makes them good is the diversity of the questions. With more time and resources I would have put way more options for all the different quizzes, reflecting the proportions of the world of One Piece!
 -	Following some user feedback given to me, in the future I would also add a way to let the user decide to either save their current score or to reset it, letting them start from blank without them needing to reload the page.
+
+# Testing
+- I confirmed that the game results are always correct.
+- I confirmed that instructions, options and results text are all readable and easy to understand.
+- I confirmed that the colors and fonts chosen are easy to understand and accessibly by running it through lighthouse in devtools.
+![Lighthouse test in devtools](https://i.ibb.co/Bc3RT6R/lighthousetest.png)
+-	I confirmed that this project is responsive, looks good and functions on all standard screen sizes using the devtools device toolbar.
