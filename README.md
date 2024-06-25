@@ -8,3 +8,7 @@ Test your knowledge of the great pirate world in  these ONE PIECE Quizzes! There
 ## Home Page
 Very simple and intuitive overall design throughout the page. Easy to understand features, starting with the home page, with just an introductory phrase, a Play button, which will take the user to the next section of the page and a Scores button, where the user will be able to view their current scores result from them playing!
 ![View of the home page](https://i.ibb.co/GHtDGnB/homepage.png)
+
+## Quiz Selection
+Here the users will be able to choose from an array of different quiz categories to test out their knowledge! Characters, places, quotes and devil fruits! All based on canon elements present in the manga and the anime show.
+![View of the quiz selection section](https://i.ibb.co/b1dT4WD/quizselection.png)
