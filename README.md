@@ -24,3 +24,7 @@ All of the quizzes have the base functionalities of keeping scores and showing c
 ## Quotes Quiz
 In this very simple designed quiz the user will be presented with an iconic quote from the One Piece media and they will have to correctly guess who said it!
 ![View of the Quotes Quiz](https://i.ibb.co/K6KCzvn/quotesquiz.png)
+
+## Devil Fruits Quiz
+And here we are, to the last and more challenging quiz! The user will have to guess the correct japanese name for the devil fruit shown. Only hardcore fans of the series will be able to get correct answers! All the images are canon representations of what the devil fruits looked like.
+![View of the devil fruit quiz](https://i.ibb.co/6WtxQBv/devilfruitsquiz.png)
