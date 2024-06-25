@@ -123,6 +123,10 @@ document.addEventListener("DOMContentLoaded", function() {
         return question;
     }
 
+    function compareStringsIgnoreCase(a, b) {
+        return a.toLowerCase() === b.toLowerCase();
+    }
+
     function showQuestion() {
         let questionData;
         switch (quizType) {
@@ -219,16 +223,16 @@ document.addEventListener("DOMContentLoaded", function() {
 
         switch (quizType) {
             case "Characters":
-                isCorrect = currentQuestion.names.includes(userAnswer);
+                isCorrect = currentQuestion.names.some(name => compareStringsIgnoreCase(name, userAnswer));
                 break;
             case "Places":
-                isCorrect = currentQuestion.names.includes(userAnswer);
+                isCorrect = currentQuestion.names.some(name => compareStringsIgnoreCase(name, userAnswer));
                 break;
             case "Quotes":
-                isCorrect = currentQuestion.character.includes(userAnswer);
+                isCorrect = currentQuestion.character.some(name => compareStringsIgnoreCase(name, userAnswer));
                 break;
             case "Devil Fruits":
-                isCorrect = currentQuestion.name === userAnswer;
+                isCorrect = compareStringsIgnoreCase(currentQuestion.name, userAnswer);
                 break;
         }
 
