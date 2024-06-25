@@ -51,7 +51,7 @@ And here we are, to the last and more challenging quiz! The user will have to gu
 - I confirmed that the game results are always correct.
 - I confirmed that instructions, options and results text are all readable and easy to understand.
 - I confirmed that the colors and fonts chosen are easy to understand and accessibly by running it through lighthouse in devtools.
-![Lighthouse test in devtools](https://i.ibb.co/Bc3RT6R/lighthousetest.png)
+![Lighthouse test in devtools](https://i.ibb.co/qxmrS8p/lighthousetest.png)
 -	I confirmed that this project is responsive, looks good and functions on all standard screen sizes using the devtools device toolbar.
 
 ## Validator Testing
