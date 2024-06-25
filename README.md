@@ -28,3 +28,9 @@ In this very simple designed quiz the user will be presented with an iconic quot
 ## Devil Fruits Quiz
 And here we are, to the last and more challenging quiz! The user will have to guess the correct japanese name for the devil fruit shown. Only hardcore fans of the series will be able to get correct answers! All the images are canon representations of what the devil fruits looked like.
 ![View of the devil fruit quiz](https://i.ibb.co/6WtxQBv/devilfruitsquiz.png)
+
+## Features left to be implemented
+-	I would have liked to put an actual image for the background, but I couldn't find the way to make it look good with all the other elements of the page.
+-	I would like to put a relaxing background music from the show to play while the user is in the website.
+-	Like all quizzes, what makes them good is the diversity of the questions. With more time and resources I would have put way more options for all the different quizzes, reflecting the proportions of the world of One Piece!
+-	Following some user feedback given to me, in the future I would also add a way to let the user decide to either save their current score or to reset it, letting them start from blank without them needing to reload the page.
