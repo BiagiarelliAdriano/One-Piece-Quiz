@@ -52,6 +52,7 @@ And here we are, to the last and more challenging quiz! The user will have to gu
 - I confirmed that the game results are always correct.
 - I confirmed that instructions, options and results text are all readable and easy to understand.
 - I confirmed that the colors and fonts chosen are easy to understand and accessibly by running it through lighthouse in devtools.
+- I confirmed that this project is responsive, looks good and functions on all standard screen sizes using the devtools device toolbar.
 
 ### Manual Testing
 | Test                                                                                                                                                                                                                       | Result|
@@ -68,8 +69,8 @@ And here we are, to the last and more challenging quiz! The user will have to gu
 | When pressing the Save & Back button, the user will be brought back to the quiz selection area so they are able to choose another quiz to play if they wish.                                                               | Pass  |
 | After pressing the Save & Back button, the Scores table will correctly change its correct and incorrect values to the same values as the ones in the quizzes the user played.                                              | Pass  |
 
+## Google Lighthouse Testing
 ![Lighthouse test in devtools](assets/images/readme/lighthousetest.png)
--	I confirmed that this project is responsive, looks good and functions on all standard screen sizes using the devtools device toolbar.
 
 ## Validator Testing
 - HTML
