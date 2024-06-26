@@ -53,6 +53,21 @@ And here we are, to the last and more challenging quiz! The user will have to gu
 - I confirmed that instructions, options and results text are all readable and easy to understand.
 - I confirmed that the colors and fonts chosen are easy to understand and accessibly by running it through lighthouse in devtools.
 
+### Manual Testing
+| Test                                                                                                                                                                                                                       | Result|
+|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------|
+| When pressing the Scores button, it will hide itself and show the scores table.                                                                                                                                            | Pass  |
+| When pressing the Play button, the user will be taken to the quiz selection area, showing the buttons to access the quizzes.                                                                                               | Pass  |
+| When pressing any of the buttons in the quiz selection area, hence the Characters button, the Places button, the Quotes button and the Devil Fruits button, the correct quiz will show to let the player start playing.    | Pass  |
+| When pressing the Back button in the quiz selection area, the user will be taken back to the home page with the Play button and the Scores button                                                                          | Pass  |
+| By inputting a correct answer in the characters quiz, the text "Who is this?" will change to "Correct", the image will change to the colored version of that character and the Characters correct score will increase by 1.| Pass  |
+| By inputting an incorrect answer in the characters quiz, the text "Who is this?" will change to "Correct answer: (name of the current character)" and the Characters incorrect score will increase by 1. | Pass |
+| By inputting a correct answer in any other quiz, the text with the quiz question will change to "Correct!" and the correct score will increase by 1.                                                                       | Pass  |
+| By inputting an incorrect answer in any other quiz, the text with the quiz question will change to "Correct answer: (current correct answer value)" and the incorrect score will increase by 1.                            | Pass  |
+| After inputting any answer, the user will have to wait 2 seconds before a new question will appear.                                                                                                                        | Pass  |
+| When pressing the Save & Back button, the user will be brought back to the quiz selection area so they are able to choose another quiz to play if they wish.                                                               | Pass  |
+| After pressing the Save & Back button, the Scores table will correctly change its correct and incorrect values to the same values as the ones in the quizzes the user played.                                              | Pass  |
+
 ![Lighthouse test in devtools](assets/images/readme/lighthousetest.png)
 -	I confirmed that this project is responsive, looks good and functions on all standard screen sizes using the devtools device toolbar.
 
