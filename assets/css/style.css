@@ -8,6 +8,10 @@ body {
     text-align: center;
 }
 
+input[type="button"] {
+    cursor: pointer;
+}
+
 .hidden {
     display: none !important;
 }
@@ -62,6 +66,7 @@ body {
 #scores-table {
     margin-top: 20px;
     background-color: white;
+    cursor: pointer;
 }
 
 #scores-table table {
