@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const scoreTitle = scoreArea.querySelector(".score-title");
     const scoreLabel = scoreArea.querySelector(".score-label");
 
-    // Data Arrays
+    // Data array for characters silhouette images
     const characters = [
         { src: "assets/images/characters/silhouette/ace.png", names: ["Ace", "Portgas D. Ace", "Portgas D Ace", "Portgas"]},
         { src: "assets/images/characters/silhouette/brook.png", names: ["Brook"]},
@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", function() {
         { src: "assets/images/characters/silhouette/usopp.png", names: ["Usopp"]}
     ];
 
-
+    // Data array for characters colored images
     const characterAnswers = [
         { src: "assets/images/characters/colored/ace.png", names: ["Ace", "Portgas D. Ace", "Portgas D Ace", "Portgas"]},
         { src: "assets/images/characters/colored/brook.png", names: ["Brook"]},
@@ -55,6 +55,7 @@ document.addEventListener("DOMContentLoaded", function() {
         { src: "assets/images/characters/colored/usopp.png", names: ["Usopp"]}
     ];
 
+    // Data array for places images
     const places = [
         { src: "assets/images/places/amazonlily.jpg", names: ["Amazon Lily"]},
         { src: "assets/images/places/littlegarden.jpg", names: ["Little Garden"]},
@@ -66,6 +67,7 @@ document.addEventListener("DOMContentLoaded", function() {
         { src: "assets/images/places/zou.jpg", names: ["Zou"]},
     ];
 
+    // Data array for quotes quiz
     const quotes = [
         { quote: "I left everything I gathered together in one place.", character: ["Gold D. Roger", "Roger", "Gold Roger", "Gold D Roger"] },
         { quote: "Nobody hurts a friend of mine!", character: ["Shanks", "Red-haired", "Red-haired Shanks", "Red haired"] },
@@ -78,6 +80,7 @@ document.addEventListener("DOMContentLoaded", function() {
         
     ];
 
+    // Data array for devil fruits images
     const devilFruits = [
         { src: "assets/images/devilfruits/bomubomunomi.png", name: "Bomu Bomu no Mi"},
         { src: "assets/images/devilfruits/dorudorunomi.png", name: "Doru Doru no Mi"},
@@ -92,28 +95,29 @@ document.addEventListener("DOMContentLoaded", function() {
     let currentQuestion; 
     let correctAnswers = 0; 
     let incorrectAnswers = 0;
-    let scoreElement = document.getElementById("quiz-score");
-    let incorrectElement = document.getElementById("quiz-incorrect");
     let quizType;
     let lastQuestion;
 
+    // Update the scores table with the user's correct answers and incorrect answers
     function updateScoresTable() {
         document.querySelector("#scores-table tr:nth-child(1) td:last-child").textContent = correctAnswers;
         document.querySelector("#scores-table tr:nth-child(2) td:last-child").textContent = incorrectAnswers;
     }
 
-
+    // Hides the image container and shows the quote container
     function hideContainers() {
         imageContainer.classList.remove("hidden");
         quoteContainer.classList.add("hidden");
     }
 
+    // Update the score title to match whatever quiz the user is playing in that moment
     function updateScoreTitle(type) {
         const typeText = type === "Devil Fruits" ? "Devil Fruits" : type;
         scoreTitle.innerHTML = `${typeText} correct: <span id='quiz-score'>${correctAnswers}</span>`;
         scoreLabel.innerHTML = `${typeText} incorrect: <span id='quiz-incorrect'>${incorrectAnswers}</span>`;
     }
 
+    // Gives the user a random question, while also making sure no question will repeat twice in a row
     function getRandomQuestion(arr) {
         let question;
         do {
@@ -123,10 +127,12 @@ document.addEventListener("DOMContentLoaded", function() {
         return question;
     }
 
+    // Makes sure to ignore case sensitivity
     function compareStringsIgnoreCase(a, b) {
         return a.toLowerCase() === b.toLowerCase();
     }
 
+    // Shows the correct kind of question depending on what section the user is accessing
     function showQuestion() {
         let questionData;
         switch (quizType) {
@@ -166,31 +172,31 @@ document.addEventListener("DOMContentLoaded", function() {
         updateScoreTitle(quizType);
     }
 
-    function resetQuizSession() {
-        scoreElement.textContent = "0";
-        incorrectElement.textContent = "0";
-    }
-
+    // When clicked, the play button will hide the home page and show the quiz selection section
     document.getElementById("play-button").addEventListener("click", function() {
         document.querySelector(".main-area").style.display = "none";
         document.getElementById("quiz-selection").classList.remove("hidden");
     });
 
+    // When clicked, the scores button will hide the button itself and show the scores table
     scoresButton.addEventListener("click", function() {
         scoresButton.classList.add("hidden");
         scoresTable.classList.toggle("hidden");
     });
 
+    // When clicked, the score table will hide itself and show the score button again
     scoresTable.addEventListener("click", function() {
         scoresTable.classList.toggle("hidden");
         scoresButton.classList.remove("hidden");
-    })
+    });
 
+    // When clicked, the back button will hide the quiz selection section and show the home page
     backButton.addEventListener("click", function() {
         document.getElementById("quiz-selection").classList.add("hidden");
         document.querySelector(".main-area").style.display = "flex";
     });
 
+    // Each of the four quiz buttons, when clicked, will hide the quiz selection section and show their respective quizzes
     [charactersButton, placesButton, quotesButton, devilFruitsButton].forEach(button => {
         button.addEventListener("click", function() {
             quizType = button.id.replace('-quiz', '').replace('characters', 'Characters').replace('places', 'Places').replace('quotes', 'Quotes').replace('fruits', 'Devil Fruits');
@@ -202,21 +208,24 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 
+    // When clicked, the save & back button will hide the quiz section and show the quiz selection
     saveBackButton.addEventListener("click", function() {
         updateScoresTable();
-        resetQuizSession();
         quizSection.classList.add("hidden");
         document.getElementById("quiz-selection").classList.remove("hidden");
     });
 
+    // When clicked, the submit button will call the submitAnswer function
     submitAnswerButton.addEventListener("click", submitAnswer);
 
+    // Allows the user to call the submitAnswer function also when pressing the Enter key on their keyboard
     document.getElementById("quiz-input").addEventListener("keydown", function(event) {
         if (event.key === "Enter") {
             submitAnswer();
         }
     });
 
+    // Checks if the user answer is correct and gives the correct score whether the answer was correct or incorret, then shows a following question
     function submitAnswer() {
         const userAnswer = quizAnswer.value.toLowerCase().trim();
         let isCorrect = false;
