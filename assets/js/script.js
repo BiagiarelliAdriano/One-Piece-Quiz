@@ -97,6 +97,7 @@ document.addEventListener("DOMContentLoaded", function() {
     let incorrectAnswers = 0;
     let quizType;
     let lastQuestion;
+    let remainingQuestions = [];
 
     // Update the scores table with the user's correct answers and incorrect answers
     function updateScoresTable() {
@@ -118,11 +119,15 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     // Gives the user a random question, while also making sure no question will repeat twice in a row
-    function getRandomQuestion(arr) {
-        let question;
-        do {
-            question = arr[Math.floor(Math.random() * arr.length)];
-        } while (question === lastQuestion);
+    function getRandomQuestion() {
+        if (remainingQuestions.length === 0){
+            endGame();
+            return null;
+        }
+
+        const randomIndex = Math.floor(Math.random() * remainingQuestions.length);
+        const question = remainingQuestions[randomIndex];
+        remainingQuestions.splice(randomIndex, 1); // Remove the question from remaining questions
         lastQuestion = question;
         return question;
     }
@@ -134,10 +139,11 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Shows the correct kind of question depending on what section the user is accessing
     function showQuestion() {
-        let questionData;
+        const questionData = getRandomQuestion();
+        if (!questionData) return;
+
         switch (quizType) {
             case "Characters":
-                questionData = getRandomQuestion(characters);
                 quizQuestion.textContent = "Who is this?";
                 quizSilhouetteImage.src = questionData.src;
                 quizColoredImage.src = characterAnswers[characters.indexOf(questionData)].src;
@@ -145,14 +151,12 @@ document.addEventListener("DOMContentLoaded", function() {
                 quizColoredImage.classList.add("hidden");
                 break;
             case "Places":
-                questionData = getRandomQuestion(places);
                 quizQuestion.textContent = "Where is this place?";
                 quizSilhouetteImage.src = questionData.src;
                 quizSilhouetteImage.classList.remove("hidden");
                 quizColoredImage.classList.add("hidden");
                 break;
             case "Quotes":
-                questionData = getRandomQuestion(quotes);
                 quizQuestion.textContent = "Who said this?";
                 quizQuote.textContent = questionData.quote;
                 imageContainer.classList.add("hidden");
@@ -160,7 +164,6 @@ document.addEventListener("DOMContentLoaded", function() {
                 quizColoredImage.classList.add("hidden");
                 break;
             case "Devil Fruits":
-                questionData = getRandomQuestion(devilFruits);
                 quizQuestion.textContent = "What is this Devil Fruit?";
                 quizSilhouetteImage.src = questionData.src;
                 quizSilhouetteImage.classList.remove("hidden");
@@ -170,6 +173,21 @@ document.addEventListener("DOMContentLoaded", function() {
         currentQuestion = questionData;
         quizAnswer.value = ""; // Clear answer input
         updateScoreTitle(quizType);
+    }
+
+    // Ends the game when the user finishes to answer all the questions
+    function endGame() {
+        // Create a new h1 element for the end game message
+        const endMessage = document.createElement("h1");
+        endMessage.textContent = "Congratulations! You are a true King of the Pirates!";
+        endMessage.id = "end-game-message";
+
+        // Add the end game message to the left-section
+        quizSection.appendChild(endMessage);
+
+        // Hide all elements in the quiz section except for the Save & Back button
+        document.querySelector(".quiz-content").style.display = "none";
+
     }
 
     // When clicked, the play button will hide the home page and show the quiz selection section
@@ -203,6 +221,23 @@ document.addEventListener("DOMContentLoaded", function() {
             document.getElementById("quiz-selection").classList.add("hidden");
             quizSection.classList.remove("hidden");
             hideContainers();
+
+            // Initialize remaining questions
+            switch (quizType) {
+                case "Characters":
+                    remainingQuestions = [...characters];
+                    break;
+                case "Places":
+                    remainingQuestions = [...places];
+                    break;
+                case "Quotes":
+                    remainingQuestions = [...quotes];
+                    break;
+                case "Devil Fruits":
+                    remainingQuestions = [...devilFruits];
+                    break;
+            }
+
             showQuestion();
             quizAnswer.focus();
         });

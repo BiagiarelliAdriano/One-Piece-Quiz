@@ -238,6 +238,11 @@ button:disabled, input:disabled {
     cursor: not-allowed; /* Changes the cursor to indicate the element is disabled */
 }
 
+end-game-message {
+    text-align: center;
+    margin-top: 20px;
+}
+
 @media screen and (min-width: 768px) {
     
     /* Main area styling */
