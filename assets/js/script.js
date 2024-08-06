@@ -225,11 +225,26 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 
+    // Disable all interactive elements when pressing the Answer button
+    function disableInteractions() {
+        submitAnswerButton.disabled = true;
+        quizAnswer.disabled = true;
+        saveBackButton.disabled = true;
+    }
+
+    // Enable all interactive elements after the two seconds cooldown
+    function enableInteractions() {
+        submitAnswerButton.disabled = false;
+        quizAnswer.disabled = false;
+        saveBackButton.disabled = false;
+    }
+
     // Checks if the user answer is correct and gives the correct score whether the answer was correct or incorret, then shows a following question
     function submitAnswer() {
+        disableInteractions(); // Disables interactions for the process
         const userAnswer = quizAnswer.value.toLowerCase().trim();
         let isCorrect = false;
-
+    
         switch (quizType) {
             case "Characters":
                 isCorrect = currentQuestion.names.some(name => compareStringsIgnoreCase(name, userAnswer));
@@ -263,6 +278,7 @@ document.addEventListener("DOMContentLoaded", function() {
         updateScoreTitle(quizType);
         setTimeout(() => {
             showQuestion();
+            enableInteractions(); // Re-enable interactions at the end of the process
             quizAnswer.focus();
         }, 2000);
     }

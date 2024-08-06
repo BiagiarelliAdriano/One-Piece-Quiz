@@ -233,6 +233,11 @@ input[type="button"] {
     background-color: #BBDEFB;
 }
 
+button:disabled, input:disabled {
+    opacity: 0.5; /* Makes the disabled elements appear semi-transparent */
+    cursor: not-allowed; /* Changes the cursor to indicate the element is disabled */
+}
+
 @media screen and (min-width: 768px) {
     
     /* Main area styling */
