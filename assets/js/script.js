@@ -92,12 +92,15 @@ document.addEventListener("DOMContentLoaded", function() {
         { src: "assets/images/devilfruits/yomiyominomi.png", name: "Yomi Yomi no Mi"},
     ];
 
+    // Global variables
     let currentQuestion; 
     let correctAnswers = 0; 
     let incorrectAnswers = 0;
     let quizType;
     let lastQuestion;
     let remainingQuestions = [];
+    let endMessage;
+    let endMessageElement = document.getElementById("end-game-message");
 
     // Update the scores table with the user's correct answers and incorrect answers
     function updateScoresTable() {
@@ -177,17 +180,47 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Ends the game when the user finishes to answer all the questions
     function endGame() {
+
+        // Determine the end message based on the incorrect score
+        if (incorrectAnswers === 0) {
+            endMessage = "Congratulations! You are truly the King of the Pirates!";
+        } else if (incorrectAnswers >= 1 && incorrectAnswers <= 6) {
+            endMessage = "Congratulations! You are on your way to become a great pirate!";
+        } else if (incorrectAnswers >= 7 && incorrectAnswers <= 11) {
+            endMessage = "Congratulations! It seems you are still new to the world of pirates!";
+        } else if (incorrectAnswers === 12) {
+            endMessage = "Congratulations! Have you even watched the show?";
+        }
+
         // Create a new h1 element for the end game message
-        const endMessage = document.createElement("h1");
-        endMessage.textContent = "Congratulations! You are a true King of the Pirates!";
-        endMessage.id = "end-game-message";
+        if (!endMessageElement) {
+            endMessageElement = document.createElement("h1");
+            endMessageElement.id = "end-game-message";
+        }
+        
+        // Set the text content of the end game message
+        endMessageElement.textContent = endMessage;
 
         // Add the end game message to the left-section
-        quizSection.appendChild(endMessage);
+        quizSection.appendChild(endMessageElement);
 
         // Hide all elements in the quiz section except for the Save & Back button
         document.querySelector(".quiz-content").style.display = "none";
 
+    }
+
+    function resetQuizSection() {
+        // Hide end game message if it exists
+        if (endMessageElement) {
+            endMessageElement.style.display = "none";
+        }
+
+        updateScoresTable();
+        correctAnswers = 0;
+        incorrectAnswers = 0;
+        
+
+        document.querySelector(".quiz-content").style.display = "flex";
     }
 
     // When clicked, the play button will hide the home page and show the quiz selection section
@@ -246,6 +279,7 @@ document.addEventListener("DOMContentLoaded", function() {
     // When clicked, the save & back button will hide the quiz section and show the quiz selection
     saveBackButton.addEventListener("click", function() {
         updateScoresTable();
+        resetQuizSection();
         quizSection.classList.add("hidden");
         document.getElementById("quiz-selection").classList.remove("hidden");
     });
