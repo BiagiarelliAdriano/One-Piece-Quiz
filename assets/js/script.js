@@ -310,8 +310,16 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Checks if the user answer is correct and gives the correct score whether the answer was correct or incorret, then shows a following question
     function submitAnswer() {
-        disableInteractions(); // Disables interactions for the process
         const userAnswer = quizAnswer.value.toLowerCase().trim();
+
+        // Check if the input is empty or contains only whitespace
+        if (userAnswer === "") {
+            alert("Please enter at least one letter.");
+            quizAnswer.focus();
+            return;
+        }
+
+        disableInteractions(); // Disables interactions for the process
         let isCorrect = false;
     
         switch (quizType) {
