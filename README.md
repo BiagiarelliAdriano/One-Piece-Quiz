@@ -41,6 +41,10 @@ In this very simple designed quiz the user will be presented with an iconic quot
 And here we are, to the last and more challenging quiz! The user will have to guess the correct japanese name for the devil fruit shown. Only hardcore fans of the series will be able to get correct answers! All the images are canon representations of what the devil fruits looked like.
 ![View of the devil fruit quiz](assets/images/readme/devilfruitsquiz.png)
 
+## Custom 404 Error Page
+I added a custom 404 page so if someone makes a mistake and encounters a broken link or mistyped the URL, will be brought to a very similar page to the normal home page and will be able to click on here and be correctly brought to the home page of One Piece Quiz!
+![404 Error page](assets/images/readme/custom404errorpage.png)
+
 ## Features left to be implemented
 -	I would have liked to put an actual image for the background, but I couldn't find the way to make it look good with all the other elements of the page.
 -	I would like to put a relaxing background music from the show to play while the user is in the website.
@@ -84,8 +88,9 @@ And here we are, to the last and more challenging quiz! The user will have to gu
 	- No relevant errors were found when passing throught the official JSHint validator.
  ![JSHint validator for Javascript code](assets/images/readme/jshinttest.png)
 
-## Unfixed Bugs
-No unfixed bugs.
+## Bugs
+- When the user inputs an answer, they are allowed to repeatedly input an answer, even during the two seconds cooldown of the program loading the following question, being able to also input blank inputs. I fixed it by creating two functions that would disable all possible inputs during the two seconds cooldown after inputting an answer. This is represented by making the disabled inputs more transparent and transforming the cursor into a stop sign. Also, when the user now tries to input a blank input, an alert will show up on the page letting the user know to input at least one letter.
+![Quiz disables inputs during the two seconds loading for following question](assets/images/readme/quizinputsdisabled.png)
 
 ## Deployment
 To deploy the project I followed these steps starting from the main project repository [here](https://github.com/BiagiarelliAdriano/One-Piece-Quiz).
