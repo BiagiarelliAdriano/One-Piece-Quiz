@@ -52,7 +52,7 @@ document.addEventListener("DOMContentLoaded", function() {
         { src: "assets/images/characters/colored/roronoazoro.png", names: ["Roronoa Zoro", "Zoro", "Roronoa"]},
         { src: "assets/images/characters/colored/sanji.png", names: ["Sanji", "Vismoke Sanji"]},
         { src: "assets/images/characters/colored/shanks.png", names: ["Shanks", "Red-haired", "Red-haired Shanks", "Red haired"]},
-        { src: "assets/images/characters/colored/usopp.png", names: ["Usopp"]}
+        { src: "assets/images/characters/colored/usopp.png", names: ["Usopp", "God Usopp"]}
     ];
 
     // Data array for places images
@@ -65,6 +65,10 @@ document.addEventListener("DOMContentLoaded", function() {
         { src: "assets/images/places/water7.jpg", names: ["Water Seven", "Water 7"]},
         { src: "assets/images/places/weatheria.jpg", names: ["Weatheria"]},
         { src: "assets/images/places/zou.jpg", names: ["Zou"]},
+        { src: "assets/images/places/flevance.jpg", names: ["Flevance"]},
+        { src: "assets/images/places/marygeoise.jpg", names: ["Mary Geoise"]},
+        { src: "assets/images/places/punkhazard.jpg", names: ["Punk Hazard"]},
+        { src: "assets/images/places/wholecakeisland.jpg", names: ["Whole Cake Island", "Whole Cake"]}
     ];
 
     // Data array for quotes quiz
@@ -73,10 +77,16 @@ document.addEventListener("DOMContentLoaded", function() {
         { quote: "Nobody hurts a friend of mine!", character: ["Shanks", "Red-haired", "Red-haired Shanks", "Red haired"] },
         { quote: "Only I can call my dream stupid!", character: ["Roronoa Zoro", "Zoro", "Roronoa"]},
         { quote: "A man dies when people forget him!", character: ["Dr. Hiriluk", "Hiriluk", "Dr Hiriluk"] },
-        { quote: "There comes a time when a man must stand and fight. And that is when his friend's dreams are being laughed at!", character: ["Usopp"] },
+        { quote: "There comes a time when a man must stand and fight. And that is when his friend's dreams are being laughed at!", character: ["Usopp", "God Usopp"] },
         { quote: "The dreams of pirates will never end!", character: ["Marshall D. Teach", "Teach", "Blackbeard", "Marshall D Teach"] },
         { quote: "I want to live!", character: ["Nico Robin", "Robin", "Nico"]},
         { quote: "The flower of friendship can bloom even in hell.", character: ["Bon Clay", "Mr. 2", "Mr 2", "Bentham"] },
+        { quote: "Maybe nothing in this world happens by accident. As everything happens for a reason, our destiny slowly takes form.", character: ["Rayleigh", "Silvers Rayleigh", "Rayleigh Silvers", "Silvers"]},
+        { quote: "People don't fear god, fear itself is god.", character: ["Enel", "Eneru"]},
+        { quote: "I am going to be King of the Pirates!", character: ["Monkey D. Luffy", "Monkey D Luffy", "Luffy"]},
+        { quote: "Weakness is a sin. The weak have no place in this world.", character: ["Crocodile", "Mr. 0", "Mr 0", "Sir Crocodile"]}
+
+
         
     ];
 
@@ -90,6 +100,10 @@ document.addEventListener("DOMContentLoaded", function() {
         { src: "assets/images/devilfruits/opeopenomi.png", name: "Ope Ope no Mi"},
         { src: "assets/images/devilfruits/sunasunanomi.png", name: "Suna Suna no Mi"},
         { src: "assets/images/devilfruits/yomiyominomi.png", name: "Yomi Yomi no Mi"},
+        { src: "assets/images/devilfruits/itoitonomi.png", name: "Ito Ito no Mi"},
+        { src: "assets/images/devilfruits/jikijikinomi.png", name: "Jiki Jiki no Mi"},
+        { src: "assets/images/devilfruits/mochimochinomi.png", name: "Mochi Mochi no Mi"},
+        { src: "assets/images/devilfruits/smile.png", name: "Smile"}
     ];
 
     // Global variables
